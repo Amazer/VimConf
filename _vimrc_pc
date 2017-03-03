@@ -1,27 +1,30 @@
-"è®¾ç½®çª—å£ä½ç½®
+"ÉèÖÃ´°¿ÚÎ»ÖÃ
 "winpos 0 0 "set the original windwo pos
 "set lines=140 columns=100
-"å¯åŠ¨æ—¶å€™ï¼Œå…¨å±
+"Æô¶¯Ê±ºò£¬È«ÆÁ
 :au GUIEnter * simalt ~x
-"è®¾ç½®mapleader
+"ÉèÖÃmapleader
 :let mapleader=","
 :nnoremap <leader>ev :e $MYVIMRC<cr>
 :nnoremap <leader>sv :so $MYVIMRC<cr>
 
-"è®¾ç½®ycm
+"ÉèÖÃycm
 "set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
+set runtimepath+=~\VimNote\
+set runtimepath+=~\VimNote\vimfiles
+set runtimepath+=~\VimNote\vimfiles/colors
 
-"ä½¿ç”¨vundleçš„é…ç½® 
-so ~/vimfiles/vundle.vim 
+"Ê¹ÓÃvundleµÄÅäÖÃ 
+so vundle.vim 
 ""
 ""execute pathogen#infect()
 filetype plugin indent on
 
-"nerdtree-tabs  æ’ä»¶ä¸æ‰“å¼€
+"nerdtree-tabs  ²å¼ş²»´ò¿ª
 let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
-"å¯è§†æ¨¡å¼ä¸­ï¼Œä½¿ç”¨ * å’Œ # æŸ¥æ‰¾
+"¿ÉÊÓÄ£Ê½ÖĞ£¬Ê¹ÓÃ * ºÍ # ²éÕÒ
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 function! s:VSetSearch()
@@ -31,10 +34,10 @@ function! s:VSetSearch()
 	let @s = temp
 endfunction
 
-"å±•å¼€å½“å‰ç›®å½•
+"Õ¹¿ªµ±Ç°Ä¿Â¼
 cnoremap <expr> %% getcmdtype( )==':'? expand('%:h').'/':'%%'
 
-"è®¾ç½®æ–‡ä»¶ç¼–ç æ ¼å¼
+"ÉèÖÃÎÄ¼ş±àÂë¸ñÊ½
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
 if has("win32")
@@ -43,48 +46,48 @@ else
 set fileencoding=utf-8
 endif
 
-"è§£å†³consleè¾“å‡ºä¹±ç 
+"½â¾öconsleÊä³öÂÒÂë
 language messages zh_CN.utf-8
 
 set nocompatible
-"è®¾ç½®æ–‡ä»¶ç±»å‹æ£€æµ‹
+"ÉèÖÃÎÄ¼şÀàĞÍ¼ì²â
 filetype plugin on
 filetype on
-filetype indent on 	"ä¸ºç‰¹å®šæ–‡ä»¶è½½å…¥ç›¸å…³ç¼©è¿›æ–‡ä»¶
+filetype indent on 	"ÎªÌØ¶¨ÎÄ¼şÔØÈëÏà¹ØËõ½øÎÄ¼ş
 syntax enable
 syntax on
 
-"è®¾ç½®ä¸»é¢˜é¢œè‰²
+"ÉèÖÃÖ÷ÌâÑÕÉ«
 "colorscheme solarized
 "colorscheme Zenburn
 "colorscheme candy
 colorscheme Jellybeans
-"è®¾ç½®é€€æ ¼é”®
+"ÉèÖÃÍË¸ñ¼ü
 set backspace=indent,eol,start
 
-"è§£å†³èœå•ä¹±ç 
+"½â¾ö²Ëµ¥ÂÒÂë
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-set incsearch   "æœç´¢
-set nu          "æ˜¾ç¤ºè¡Œå·
-set ignorecase  "å¿½ç•¥å¤§å°å†™
-set guifont=Consolas:h10   "ä¿®æ”¹å­—ä½“ 
+set incsearch   "ËÑË÷
+set nu          "ÏÔÊ¾ĞĞºÅ
+set ignorecase  "ºöÂÔ´óĞ¡Ğ´
+set guifont=Consolas:h10   "ĞŞ¸Ä×ÖÌå 
 
-set autoread "æ–‡ä»¶ä¿®æ”¹åè‡ªåŠ¨è½½å…¥
-set nobackup "è¦†ç›–æ–‡ä»¶æ—¶ä¸å¤‡ä»½
-set noswapfile "å…³é—­äº¤äº’æ–‡ä»¶
-set noundofile "å…³é—­.un~æ–‡ä»¶
+set autoread "ÎÄ¼şĞŞ¸Äºó×Ô¶¯ÔØÈë
+set nobackup "¸²¸ÇÎÄ¼şÊ±²»±¸·İ
+set noswapfile "¹Ø±Õ½»»¥ÎÄ¼ş
+set noundofile "¹Ø±Õ.un~ÎÄ¼ş
 
-set ai "è‡ªåŠ¨ç¼©è¿›
-set sw=4 "è‡ªåŠ¨ç¼©è¿›å®½åº¦
-set ts=4 " tabstop åˆ¶è¡¨ç¬¦å®½åº¦
-set sta  "å¼€å¯smarttab åœ¨æ’å…¥æ¨¡å¼
+set ai "×Ô¶¯Ëõ½ø
+set sw=4 "×Ô¶¯Ëõ½ø¿í¶È
+set ts=4 " tabstop ÖÆ±í·û¿í¶È
+set sta  "¿ªÆôsmarttab ÔÚ²åÈëÄ£Ê½
 
-"è®¾ç½®æ™®é€šæ¨¡å¼å¿«æ·é”®ä¸ºjj
+"ÉèÖÃÆÕÍ¨Ä£Ê½¿ì½İ¼üÎªjj
 :inoremap jj <esc>
 
-"è®¾ç½®ç³»ç»Ÿå‰ªè´´æ¿
+"ÉèÖÃÏµÍ³¼ôÌù°å
 :nnoremap y "+y
 :vnoremap y "+y
 :nnoremap p "+p
@@ -94,35 +97,35 @@ set sta  "å¼€å¯smarttab åœ¨æ’å…¥æ¨¡å¼
 :nnoremap d "+d
 :vnoremap d "+d
 
-"è®¾ç½®(),[],{},""æˆå¯¹å‡ºç°
+"ÉèÖÃ(),[],{},""³É¶Ô³öÏÖ
 :inoremap ( ()<left>
 :inoremap [ []<left>
 :inoremap { {}<left>
 :inoremap " ""<left>
 ":nnoremap <f5> :!ctags _R<CR>
 
-"è®¾ç½®tags
+"ÉèÖÃtags
 set tags=tags
 set autochdir
 
 
-"å…ˆæ¸…é™¤ä¸€ä¸‹æ‰€æœ‰å‘½ä»¤
+"ÏÈÇå³ıÒ»ÏÂËùÓĞÃüÁî
 ":autocmd!
 "
-""ä¿å­˜æ–‡ä»¶æ—¶ï¼Œè‡ªåŠ¨æ›´æ–°ctags
+""±£´æÎÄ¼şÊ±£¬×Ô¶¯¸üĞÂctags
 :autocmd BufWritePost * call system("ctags -R")
 "
-""æ–‡ä»¶æ‰“å¼€æ—¶ï¼Œå…‰æ ‡æ¢å¤åˆ°ä¸Šæ¬¡çš„ä½ç½®
+""ÎÄ¼ş´ò¿ªÊ±£¬¹â±ê»Ö¸´µ½ÉÏ´ÎµÄÎ»ÖÃ
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 "
-""å¦‚æœæ–‡ä»¶æ˜¯pythonï¼Œä½¿ç”¨pythonçš„è®¾ç½®
+""Èç¹ûÎÄ¼şÊÇpython£¬Ê¹ÓÃpythonµÄÉèÖÃ
 au FileType python so ~/myvimfiles/py.vim
 "
-""å¦‚æœæ–‡ä»¶æ˜¯note,ä½¿ç”¨noteçš„è®¾ç½®ï¼ˆè‡ªå®šä¹‰çš„noteç±»å‹ï¼‰
+""Èç¹ûÎÄ¼şÊÇnote,Ê¹ÓÃnoteµÄÉèÖÃ£¨×Ô¶¨ÒåµÄnoteÀàĞÍ£©
 au BufNewFile,BufRead *.note so ~/myvimfiles/note.vim
 "
-""å¦‚æœæ–‡ä»¶æ˜¯csï¼Œä½¿ç”¨csçš„è®¾ç½®
+""Èç¹ûÎÄ¼şÊÇcs£¬Ê¹ÓÃcsµÄÉèÖÃ
 au FileType cs so ~/myvimfiles/cs.vim
 "
-"å¦‚æœæ–‡ä»¶æ˜¯.vimï¼Œä½¿ç”¨vimçš„è®¾ç½®
+"Èç¹ûÎÄ¼şÊÇ.vim£¬Ê¹ÓÃvimµÄÉèÖÃ
 au FileType vim so ~/myvimfiles/vim.vim
