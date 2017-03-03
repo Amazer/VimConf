@@ -1,29 +1,27 @@
-"ÉèÖÃ´°¿ÚÎ»ÖÃ
-winpos 0 0 "set the original windwo pos
-set lines=140 columns=100
-"ÉèÖÃmapleader
+"è®¾ç½®çª—å£ä½ç½®
+"winpos 0 0 "set the original windwo pos
+"set lines=140 columns=100
+"å¯åŠ¨æ—¶å€™ï¼Œå…¨å±
+:au GUIEnter * simalt ~x
+"è®¾ç½®mapleader
 :let mapleader=","
-:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap <leader>ev :e $MYVIMRC<cr>
 :nnoremap <leader>sv :so $MYVIMRC<cr>
 
-"ÉèÖÃycm
+"è®¾ç½®ycm
 "set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
 
-"Ê¹ÓÃvundleµÄÅäÖÃ 
+"ä½¿ç”¨vundleçš„é…ç½® 
 so ~/vimfiles/vundle.vim 
 ""
 ""execute pathogen#infect()
-""syntax on
 filetype plugin indent on
 
-"ack ÅäÖÃ ,ÓĞÎÊÌâ£¬²»ÄÜÓÃ£¬´ı²é¡£¡£¡£
-"let g:ackprg='ag --nogroup --nocolor --column'
-
-"nerdtree-tabs  ²å¼ş²»´ò¿ª
+"nerdtree-tabs  æ’ä»¶ä¸æ‰“å¼€
 let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
-"¿ÉÊÓÄ£Ê½ÖĞ£¬Ê¹ÓÃ * ºÍ # ²éÕÒ
+"å¯è§†æ¨¡å¼ä¸­ï¼Œä½¿ç”¨ * å’Œ # æŸ¥æ‰¾
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 function! s:VSetSearch()
@@ -33,10 +31,10 @@ function! s:VSetSearch()
 	let @s = temp
 endfunction
 
-"Õ¹¿ªµ±Ç°Ä¿Â¼
+"å±•å¼€å½“å‰ç›®å½•
 cnoremap <expr> %% getcmdtype( )==':'? expand('%:h').'/':'%%'
 
-"ÉèÖÃÎÄ¼ş±àÂë¸ñÊ½
+"è®¾ç½®æ–‡ä»¶ç¼–ç æ ¼å¼
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
 if has("win32")
@@ -45,47 +43,48 @@ else
 set fileencoding=utf-8
 endif
 
-"½â¾öconsleÊä³öÂÒÂë
+"è§£å†³consleè¾“å‡ºä¹±ç 
 language messages zh_CN.utf-8
 
 set nocompatible
-"ÉèÖÃÎÄ¼şÀàĞÍ¼ì²â
+"è®¾ç½®æ–‡ä»¶ç±»å‹æ£€æµ‹
 filetype plugin on
 filetype on
-filetype indent on 	"ÎªÌØ¶¨ÎÄ¼şÔØÈëÏà¹ØËõ½øÎÄ¼ş
+filetype indent on 	"ä¸ºç‰¹å®šæ–‡ä»¶è½½å…¥ç›¸å…³ç¼©è¿›æ–‡ä»¶
 syntax enable
 syntax on
 
-"ÉèÖÃÖ÷ÌâÑÕÉ«
-"colorscheme cyc_2
+"è®¾ç½®ä¸»é¢˜é¢œè‰²
 "colorscheme solarized
-colorscheme Zenburn
-"ÉèÖÃÍË¸ñ¼ü
+"colorscheme Zenburn
+"colorscheme candy
+colorscheme Jellybeans
+"è®¾ç½®é€€æ ¼é”®
 set backspace=indent,eol,start
 
-"½â¾ö²Ëµ¥ÂÒÂë
+"è§£å†³èœå•ä¹±ç 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-set incsearch   "ËÑË÷
-set nu          "ÏÔÊ¾ĞĞºÅ
-set ignorecase  "ºöÂÔ´óĞ¡Ğ´
-set guifont=Consolas:h10   "ĞŞ¸Ä×ÖÌå 
+set incsearch   "æœç´¢
+set nu          "æ˜¾ç¤ºè¡Œå·
+set ignorecase  "å¿½ç•¥å¤§å°å†™
+set guifont=Consolas:h10   "ä¿®æ”¹å­—ä½“ 
 
-set autoread "ÎÄ¼şĞŞ¸Äºó×Ô¶¯ÔØÈë
-set nobackup "¸²¸ÇÎÄ¼şÊ±²»±¸·İ
-set noswapfile "¹Ø±Õ½»»¥ÎÄ¼ş
-set noundofile "¹Ø±Õ.un~ÎÄ¼ş
+set autoread "æ–‡ä»¶ä¿®æ”¹åè‡ªåŠ¨è½½å…¥
+set nobackup "è¦†ç›–æ–‡ä»¶æ—¶ä¸å¤‡ä»½
+set noswapfile "å…³é—­äº¤äº’æ–‡ä»¶
+set noundofile "å…³é—­.un~æ–‡ä»¶
 
-set ai "×Ô¶¯Ëõ½ø
-set sw=4 "×Ô¶¯Ëõ½ø¿í¶È
-set ts=4 " tabstop ÖÆ±í·û¿í¶È
-set sta  "¿ªÆôsmarttab ÔÚ²åÈëÄ£Ê½
+set ai "è‡ªåŠ¨ç¼©è¿›
+set sw=4 "è‡ªåŠ¨ç¼©è¿›å®½åº¦
+set ts=4 " tabstop åˆ¶è¡¨ç¬¦å®½åº¦
+set sta  "å¼€å¯smarttab åœ¨æ’å…¥æ¨¡å¼
 
-"ÉèÖÃÆÕÍ¨Ä£Ê½¿ì½İ¼üÎªjj
+"è®¾ç½®æ™®é€šæ¨¡å¼å¿«æ·é”®ä¸ºjj
 :inoremap jj <esc>
 
-"ÉèÖÃÏµÍ³¼ôÌù°å
+"è®¾ç½®ç³»ç»Ÿå‰ªè´´æ¿
 :nnoremap y "+y
 :vnoremap y "+y
 :nnoremap p "+p
@@ -95,33 +94,35 @@ set sta  "¿ªÆôsmarttab ÔÚ²åÈëÄ£Ê½
 :nnoremap d "+d
 :vnoremap d "+d
 
-"ÉèÖÃ(),[],{},""³É¶Ô³öÏÖ
-:inoremap ( ()<Esc>i
-:inoremap [ []<Esc>i
-:inoremap { {}<Esc>i
-:inoremap " ""<Esc>i
-
+"è®¾ç½®(),[],{},""æˆå¯¹å‡ºç°
+:inoremap ( ()<left>
+:inoremap [ []<left>
+:inoremap { {}<left>
+:inoremap " ""<left>
 ":nnoremap <f5> :!ctags _R<CR>
-"ÉèÖÃtags
-""set tags=tags
-""set autochdir
-"±£´æÎÄ¼şÊ±£¬×Ô¶¯¸üĞÂctags
-"":autocmd BufWritePost * call system("ctags -R")
 
-"¿ì½İ´ò¿ª_vimrcÅäÖÃÎÄ¼ş
-:noremap <f2> :e ~/_vimrc<CR>
+"è®¾ç½®tags
+set tags=tags
+set autochdir
 
-"ÎÄ¼ş´ò¿ªÊ±£¬¹â±ê»Ö¸´µ½ÉÏ´ÎµÄÎ»ÖÃ
+
+"å…ˆæ¸…é™¤ä¸€ä¸‹æ‰€æœ‰å‘½ä»¤
+":autocmd!
+"
+""ä¿å­˜æ–‡ä»¶æ—¶ï¼Œè‡ªåŠ¨æ›´æ–°ctags
+:autocmd BufWritePost * call system("ctags -R")
+"
+""æ–‡ä»¶æ‰“å¼€æ—¶ï¼Œå…‰æ ‡æ¢å¤åˆ°ä¸Šæ¬¡çš„ä½ç½®
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
-
-"Èç¹ûÎÄ¼şÊÇpython£¬Ê¹ÓÃpythonµÄÉèÖÃ
-au FileType ptyhon so ~/myvimfiles/py.vim
-
-"Èç¹ûÎÄ¼şÊÇnote,Ê¹ÓÃnoteµÄÉèÖÃ£¨×Ô¶¨ÒåµÄnoteÀàĞÍ£©
+"
+""å¦‚æœæ–‡ä»¶æ˜¯pythonï¼Œä½¿ç”¨pythonçš„è®¾ç½®
+au FileType python so ~/myvimfiles/py.vim
+"
+""å¦‚æœæ–‡ä»¶æ˜¯note,ä½¿ç”¨noteçš„è®¾ç½®ï¼ˆè‡ªå®šä¹‰çš„noteç±»å‹ï¼‰
 au BufNewFile,BufRead *.note so ~/myvimfiles/note.vim
-
-"Èç¹ûÎÄ¼şÊÇcs£¬Ê¹ÓÃcsµÄÉèÖÃ
+"
+""å¦‚æœæ–‡ä»¶æ˜¯csï¼Œä½¿ç”¨csçš„è®¾ç½®
 au FileType cs so ~/myvimfiles/cs.vim
-
-"Èç¹ûÎÄ¼şÊÇ.vim£¬Ê¹ÓÃvimµÄÉèÖÃ
+"
+"å¦‚æœæ–‡ä»¶æ˜¯.vimï¼Œä½¿ç”¨vimçš„è®¾ç½®
 au FileType vim so ~/myvimfiles/vim.vim
