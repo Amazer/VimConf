@@ -1,0 +1,48 @@
+set nocompatible
+set encoding=utf-8
+set fileencodings=utf-8,chinese,latin-1
+
+set nu 
+syntax enable
+syntax on
+set ignorecase
+
+set ai "自动缩进
+set sw=4 "自动缩进宽度
+set ts=4 
+set hlsearch!
+set is
+
+:nmap <tab> V>
+:nmap <s-tab> V<
+:vmap <tab> >gv
+:vmap <s-tab> <gv
+:inoremap jj <esc>
+
+"设置注释//
+:vnoremap ci :s/^/\/\/<CR>
+:vnoremap cu :s/\/\//<CR>
+:nnoremap ci :s/^/\/\/<CR>
+:nnoremap cu :s/\/\//<CR>
+
+:nnoremap y "+y
+:vnoremap y "+y
+:nnoremap p "+p
+" 输入命令 :actionlist 显示所有action 
+
+"设置其他
+:nmap gq :action ReformatCode<CR>
+:nmap gr :action RenameElement<CR>
+:nmap ,t :action VimMotionNextTab<CR>
+:nmap ,r :action VimMotionPreviousTab<CR>
+:nmap cf :action SearchEverywhere<CR>
+:nmap ck :action GotoFile<CR>
+":nmap cs :action FindModal<CR>
+:nmap cs :action GotoSymbol<CR>
+:nmap ga :action GotoAction<CR>
+:nmap ca :action FindUsages<CR>
+:nmap co :action ActivateStructureToolWindow<CR>
+:nmap cv :action ActivateProjectToolWindow<CR>
+:nmap st :action SelectIn<CR>
+:nmap cm :action ShowFilePath<CR>
+

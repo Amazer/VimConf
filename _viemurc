@@ -1,0 +1,119 @@
+set ai "自动缩进
+set sw=4 "自动缩进宽度
+set ci
+set ts=4 
+set noh   "关闭高亮显示
+set is
+
+
+":nmap ;rs :vsc Build.RebuildSelection<CR>
+":nmap ;ra :vsc Build.RebuildSolution<CR>
+
+:nnoremap <tab> V>
+:nnoremap <s-tab> V<
+:vnoremap <tab> >gv
+:vnoremap <s-tab> <gv
+:inoremap jj <esc>
+
+":nmap <c-o> :vsc View.NavigateBackward<CR>
+:nnoremap <c-p> :vsc View.NavigateBackward<CR>
+:nnoremap <c-n> :vsc View.NavigateForward<CR>
+
+:nnoremap ,t :vsc Window.NextTab<CR>
+:nnoremap ,r :vsc Window.PreviousTab<CR>
+:nnoremap ,nv :vsc Window.NewVerticalTabGroup<CR>
+:nnoremap ,nh :vsc Window.NewHorizontalTabGroup<CR>
+:nnoremap ,mn :vsc Window.MovetoNextTabGroup<CR>
+:nnoremap ,mp :vsc Window.MovetoPreviousTabGroup<CR>
+:nnoremap ,wn :vsc Window.NextDocumentWindow<CR>
+:nnoremap ,wp :vsc Window.PreviousDocumentWindow<CR>
+
+"20161014 added
+"map pd to peekDefinition
+":nmap gpd :vsc Edit.PeekDefinition<CR>
+":nmap gtl :vsc View.TaskList<CR>
+:nmap gt :vsc View.TaskList<CR>
+":nmap gtn :vsc View.NextTask<CR>
+":nmap gtp :vsc View.PreviousTask<CR>
+
+:nnoremap cl :vsc View.ErrorList<CR>
+:nnoremap cn :vsc View.NextError<CR>
+:nnoremap cp :vsc View.PreviousError<CR>
+
+":nmap gvf :vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>
+
+":nmap gic :vsc EditorContextMenus.CodeWindow.InsertComment<CR>
+":nmap gac :vsc EditorContextMenus.CodeWindow.AddComment<CR>
+
+
+"添加注释
+:vnoremap ci :s/^/\\/\\//<CR>
+:vnoremap cu :s/\\/\\///<CR>
+:nnoremap ci :s/^/\\/\\//<CR>
+:nnoremap cu :s/\\/\\///<CR>
+":inoremap ci <esc>:s/^/\\/\\//<CR>i
+":inoremap cu <esc>:s/\\/\\///<CR>i
+
+"去定义
+:nnoremap gd <C-]>
+
+"gq->==
+:nnoremap gq ==
+
+"重命名
+:nnoremap gr :vsc VAssistX.RefactorRename<CR>
+
+"查看函数列表 list methods
+:nnoremap lm :vsc VAssistX.ListMethodsInCurrentFile<CR>
+
+"查找所有引用--
+:nnoremap ca :vsc Edit.FindAllReferences<CR>
+
+"查找所有引用
+:nnoremap cr :vsc VAssistX.FindReferences<CR>
+
+"打开查看类的对话框
+:nnoremap cs :vsc VAssistX.FindSymbolDialog<CR>
+
+"打开查看文件的对话框
+:nnoremap cf :vsc VAssistX.OpenFileInSolutionDialog<CR>
+
+"open VAOutline
+:nnoremap co :vsc VAssistX.VAOutline<CR>
+
+"打开解决方案资源管理器
+:nnoremap cv :vsc View.SolutionExplorer<CR>
+
+"查找在当前文件中的引用
+:nnoremap cj :vsc VAssistX.FindReferencesinFile<CR>
+
+"在文件中查找
+:nnoremap ck :vsc Edit.FindinFiles<CR>
+
+"打开文件所在文件夹
+:nnoremap cm :vsc File.OpenContainingFolder<CR>
+
+"快速查看方法定义 
+:nnoremap zj :vsc Edit.QuickInfo<CR>
+
+"快速查看方法的所有定义,鼠标在方法parameter上的时候显示的东西
+:nnoremap zk :vsc Edit.ParameterInfo<CR>
+
+"打开查找符号结果
+:nnoremap zs :vsc View.FindSymbolResults<CR>
+
+"打开查找结果1
+:nnoremap zi :vsc View.FindResults1<CR>
+
+"打开查找结果2
+:nnoremap zu :vsc View.FindResults2<CR>
+
+"打开va的在本文件中查找结果
+:nnoremap zu :vsc VAssistX.FindReferencesResults<CR>
+
+"实现interface接口
+:nnoremap zp :vsc VAssistX.RefactorImplementInterface<CR>
+
+"可视模式中，使用 * 和 # 查找
+:vnoremap * y/<C-r>+<CR>
+:vnoremap # y?<C-r>+<CR>
