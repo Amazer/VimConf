@@ -1,0 +1,92 @@
+set encoding=utf-8
+
+"设置ycm
+set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
+
+"python PEP8 缩进标准
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=79	"每行代码长度不超过80
+set expandtab
+set autoindent
+set fileformat=unix
+
+" 不显示gui
+if has("gui_running")
+    set guioptions-=m "隐藏菜单栏
+    set guioptions-=T "隐藏工具栏
+endif
+
+"定义BadWhitespace 高亮群组
+hi BadWhitespace guifg=gray guibg=red ctermfg=gray ctermbg=red
+"多余的空白字符红色显示
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
+
+"设置<F5>是执行当前py文件
+:noremap <F5> :!python %<CR>
+:inoremap <F5> <esc>:!python %<CR>
+
+"设置vim的注释	
+:inoremap ci <esc>:s/^/\#/<CR>i
+:inoremap cu <esc>:s/\#/<CR>i
+:vnoremap ci :s/^/\#/<CR>
+:vnoremap cu :s/\#/<CR>
+:nnoremap ci :s/^/\#/<CR>
+:nnoremap cu :s/\#/<CR>
+
+"折叠
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za     "使用空格键折叠和取消折叠
+
+"SimpyFold 插件，看到在折叠代码的文档字符串
+let g:SimpyFold_docstring_preview=1
+
+"指定屏幕分割区域 :sv 纵向布局，新文件在当前文件下方打开，:vs
+"横向模具，新文件在当前文件右侧打开
+set splitbelow
+set splitright
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"设置ycm 的python
+let g:ycm_autoclose_preview_window_after_completion=1	"完成操作之后，自动补全窗口不消失
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR> "转到定义快捷方式
+
+"virtualenv 虚拟环境的支持 
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+	project_base_dir=os.environ['VIRTUAL_ENV']
+	activate_this=os.path.join(project_base_dir,'bin/activate_this.py')
+	execfile(activate_this,dict(__file__=activate_this))
+EOF
+
+"nerdtree-tabs  插件在python中打开
+let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_gui_startup = 1
+
+"vim-flake8 PEP8风格检查插件 配置
+let python_highlight_all=1
+syntax on
+
+"python 配色方案设置 需要Zenburn 和 vim-colors-solarized插件
+if has('gui_running')
+	set background=dark
+	colorscheme solarized
+else
+	colorscheme Zenburn
+endif
+
+"----jedi-vim config
+let g:jedi#auto_initialization=1
+let g:jedi#use_tabs_not_buffers=1
+let g:jedi#popup_on_dot=1
+let g:jedi#popup_select_first=1
+let g:jedi#completions_enable=1
