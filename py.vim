@@ -77,12 +77,12 @@ let python_highlight_all=1
 syntax on
 
 "python 配色方案设置 需要Zenburn 和 vim-colors-solarized插件
-if has('gui_running')
-	set background=dark
-	colorscheme solarized
-else
-	colorscheme Zenburn
-endif
+"if has('gui_running')
+"	set background=dark
+"	colorscheme solarized
+"else
+"	colorscheme Zenburn
+"endif
 
 "----jedi-vim config
 let g:jedi#auto_initialization=1
