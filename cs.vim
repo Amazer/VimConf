@@ -1,8 +1,8 @@
-"ÉèÖÃycm
+"è®¾ç½®ycm
 "set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
 
 
-function OpenFileLocation()
+function! OpenFileLocation()
 if(expand("%")!="")
 		execute "!start explorer /select,%"
 	else
@@ -12,13 +12,13 @@ endfunction
 
 :nnoremap cm :call OpenFileLocation()<CR>
 
-"ÉèÖÃ×¢ÊÍ//
+"è®¾ç½®æ³¨é‡Š//
 :vnoremap ci :s/^/\/\/<CR>
 :vnoremap cu :s/\/\//<CR>
 :nnoremap ci :s/^/\/\/<CR>
 :nnoremap cu :s/\/\//<CR>
 
-"Í£ÓÃycm£¬ÒòÎªºÍOmnisharp³åÍ»
+"åœç”¨ycmï¼Œå› ä¸ºå’ŒOmnisharpå†²çª
 "let g:ycm_auto_trigger=0
 
 "---2017.3.1
@@ -30,14 +30,14 @@ set completeopt=longest,menuone,preview
 set splitbelow
 "--end
 
-"ÉèÖÃºöÂÔÎÄ¼şÀàĞÍ
+"è®¾ç½®å¿½ç•¥æ–‡ä»¶ç±»å‹
 let NERDTreeIgnore=['\.meta$','\.lua$','\.pb$']
 let g:ctrlptom_ignore='!\.cs$'
 let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 
 "set wildignore+=*\\tmp\\*,*\\*svn*\\*,*.swp,*.zip,*.exe,*.meta,*.unity,*.assets,*.txt,*.dll " Windows
 
-"ÉèÖÃÓï·¨¸ßÁÁ
+"è®¾ç½®è¯­æ³•é«˜äº®
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
