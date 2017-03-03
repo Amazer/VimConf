@@ -1,0 +1,21 @@
+set ai "自动缩进
+set sw=4 "自动缩进宽度
+set ts=4 
+set ignorecase
+set autoindent
+set hlsearch!
+set smartcase
+
+:nmap <tab> V>
+:nmap <s-tab> V<
+:vmap <tab> >gv
+:vmap <s-tab> <gv
+:imap <C-i> <esc>
+
+
+
+
+
+
+
+
