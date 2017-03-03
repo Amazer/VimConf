@@ -93,10 +93,10 @@ augroup omnisharp_commands
 
     autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
     autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
-    autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
-    autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
-    autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
-    autocmd FileType cs nnoremap <leader>fm :OmniSharpFindMembers<cr> "finds members in the current buffer
+    autocmd FileType cs nnoremap cf :OmniSharpFindType<cr>
+    autocmd FileType cs nnoremap cs :OmniSharpFindSymbol<cr>
+    autocmd FileType cs nnoremap cj :OmniSharpFindUsages<cr>
+    autocmd FileType cs nnoremap lm :OmniSharpFindMembers<cr> "finds members in the current buffer
     " cursor can be anywhere on the line containing an issue 
     autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>  
     autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
@@ -108,18 +108,20 @@ augroup omnisharp_commands
 
 augroup END
 
-" Contextual code actions (requires CtrlP)
+set updatetime=500
+" Remove 'Press Enter to continue' message when type information is longer than one line.
+set cmdheight=2
+
+" Contextual code actions (requires CtrlP or unite.vim)
 nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
 " Run code actions with text selected in visual mode to extract method
 vnoremap <leader><space> :call OmniSharp#GetCodeActions('visual')<cr>
 
-
 " rename with dialog
-nnoremap gr:OmniSharpRename<cr>
-nnoremap <F2> :OmniSharpRename<cr>      
+nnoremap gr :OmniSharpRename<cr>
+nnoremap <F2> :OmniSharpRename<cr>
 " rename without dialog - with cursor on the symbol to rename... ':Rename newname'
 command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
-
 
 " Force OmniSharp to reload the solution. Useful when switching branches etc.
 nnoremap <leader>rl :OmniSharpReloadSolution<cr>
@@ -127,11 +129,31 @@ nnoremap <leader>cf :OmniSharpCodeFormat<cr>
 " Load the current .cs file to the nearest project
 nnoremap <leader>tp :OmniSharpAddToProject<cr>
 
-
 " (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution
 nnoremap <leader>ss :OmniSharpStartServer<cr>
 nnoremap <leader>sp :OmniSharpStopServer<cr>
 
-
 " Add syntax highlighting for types and interfaces
 nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+"Don't ask to save when changing buffers (i.e. when jumping to a type definition)
+set hidden
+
+" Enable snippet completion, requires completeopt-=preview
+let g:OmniSharp_want_snippet=1
+"openIDE
+map <C-S-j> :let x = system('oi set-to-foreground ContinuousTests "ContinuousTests Standalone Client"')<cr>
+imap <C-S-j> <Esc>:let x = system('oi set-to-foreground ContinuousTests "ContinuousTests Standalone Client"')<cr>
+map <C-S-t> :let x = system('oi gototype')<cr>
+imap <C-S-t> <Esc>:let x = system('oi gototype')<cr>
+map <C-S-e> :let x = system('oi explore')<cr>
+imap <C-S-e> <Esc>:let x = system('oi explore')<cr>
+
+"set Ultisnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
