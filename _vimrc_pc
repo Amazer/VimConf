@@ -116,13 +116,13 @@ set autochdir
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 "
 ""如果文件是python，使用python的设置
-au FileType python so ~/myvimfiles/py.vim
+au FileType python so ~/vimfiles/py.vim
 "
 ""如果文件是note,使用note的设置（自定义的note类型）
-au BufNewFile,BufRead *.note so ~/myvimfiles/note.vim
+au BufNewFile,BufRead *.note so ~/vimfiles/note.vim
 "
 ""如果文件是cs，使用cs的设置
-au FileType cs so ~/myvimfiles/cs.vim
+au FileType cs so ~/vimfiles/cs.vim
 "
 "如果文件是.vim，使用vim的设置
-au FileType vim so ~/myvimfiles/vim.vim
+au FileType vim so ~/vimfiles/vim.vim
