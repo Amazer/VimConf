@@ -1,0 +1,402 @@
+ubuntu 启用和禁用触摸板：
+sudo rmmod psmouse    这个是禁用的
+sudo modprobe psmouse 这个是启用的
+0.
+ 插入模式下 - 更正错误输入
+ ctrl+h 删除前一个字符，相当于退格键
+ ctrl+w 删除前一个单词
+ ctrl+u 删除至行首
+
+ 插入模式下 - 调整行缩进
+ ctrl+t 增加缩进
+ ctrl+d 减少缩进
+
+ 插入模式下 - 粘贴寄存器文本
+ ctrl+r{register} 将寄存器中的文本粘贴
+ ctrl+r= 使用表达式寄存器。在提示符中可以输入要执行的表达式
+
+
+1.num<C-a> :第一个遇到的数字加num 
+  num<C-x> :第一个遇到的数字减num 
+
+2.:so vimrcfullPath  :重新加载vimrc当前打设置
+3.vim 中ctrl+s后，vim卡死，是因为ctrl+s是linux中的锁屏快捷键，再按ctrl+q退出锁屏幕
+4.vim再插入模式下，退格键不能用：
+	再vimrc中添加
+	set backspace=indent,eol,start
+5.Ctrl+r:r寄存器的用法
+		再插入模式下，ctrl+r 插入寄存器中的内容
+		其中=寄存器，有计算功能
+		eg.:let i=0
+		   :let i+=1
+		   则=寄存器中的值是 1 
+6.Ctrl+o:
+	在插入模式，可以进行一次命令，再进入插入模式
+	在普通模式，返回上一次修改的地方（：jumps 查看跳转列表）
+7.Ctrl+^:快速切换文件 其中，文件的%表示当前文件，#表示可以跳转打文件
+8.宏相关
+	录制到了寄存器中，所以，想要查看宏的内容，可以输入寄存器中的内容 ：put a
+	录制打时候，在宏后面添加命令，使用 qA (寄存器的大写)
+	从文件中读取宏，就是把宏读取某个寄存器 但是，要注意行末尾的J.所以，用 0"ay$ dd将宏读取a寄存器，并且删除
+9.:args :查看所有打开文件，并且[]中显示的是当前的文件
+  :args {filenames} 打开多个文件
+  :next :prev 遍历文件
+  
+  :hidden 是的缓存区可以不保存，而跳转到下一个
+  :argdo :每个打开文件执行命令
+ 关闭时候：
+ :w  write
+ :e[deit]! ! editor all
+ :qa!      !quite all
+ :wa!      !write all
+
+:tabedit {fileName} 打开新的标签页
+:tabc[lose] 关闭当前标签页以及其中的所有窗口
+:tabo[nly]  只保留活动标签页，关闭所有其他标签页
+<C-w>T 把当前窗口移动到一个新标签页
+:tabn[ext]{N}  {N}gt 切换到编号为N的标签页
+:tabn[ext] gt 切换到下一标签页
+:tabp[revious] gT 切换到上一标签页
+:tabmove [N] 重排标签页， 当前标签页move 到 index N的位置
+ 	
+10.:edit! 表示文件不使用缓存中内容，而是重新加载磁盘中的内容
+11.大小写转换方式：
+	~ 使得光标下的字符大小写互换
+	gu 使得选中字符小写
+	gU 使得选中字符大写
+	vgu 用v选中，再执行命令。
+	 区分大小写：
+	 set ignroecase 忽略大小写
+	 \c 在一次模式中，强制忽略大小写，可以出现在模式的任意位置 
+	 \C 在一次模式中，强制区分大小写，可以出现在模式的任意位置 
+	 set smartase 启用后，会根据输入时候是否有大写判定是否区分大小写。
+12.在vim中，按了ctrl+z，会使得vim暂时挂起，进入到命令行模式。在命令行中执行 fg 命令，返回上次编辑的地方
+	？还有一种方法？？哪种来着？？
+13.:fg 返回上一次的文件
+14.vim中 . 表示当前位置， %表示当前文件
+	vim中的地址，是num
+         %：h 当前文件的目录
+15.在vim命令行中，!{command}表示执行外部命令
+16. vim . 表示打开当目录结构（.表示当前位置）
+	在vim中:path可以设置当前目录？？？忘了，，， :h path查一下
+17.寄存器相关：
+	命令模式中，:reg a 表示查看a寄存器中的内容
+	普通模式中，"a 表示a寄存器中。查找打时候，是:h quote_a
+18.文件相关：
+：lcd {path}设置当前窗口的本地目录。 :lcd切换另外一个目录
+ :pwd 打印当前工作目录（print work directory）
+ 展开当前文件所在目录：
+ cnoremap <expr> %% getcmdtype( )==':'? expand('%:h').'/':'%%'
+ :h命令，出去了文件名，即只保留了文件目录
+ ：set path? 打印当前path的设置
+  ：set path+=xxx/**, 添加xxx目录下的所有子目录，之后，就可以用 ：find{filename}打开文件了
+   ：set sua+=.cs ,为文件添加后缀名字为.cs.   sua=suffixesadd
+19.标签
+:tabedit {filename} 打开一个新的标签
+20.
+:incsearch  /: is   increment search ,搜索的时候，显示当前输入模式的配置位置
+21.正则表达式
+ \v 打开very magic,使得在正则表达式中，除_、字母和数字以外，直接使用特殊符号规则
+ eg. /\v#({0-9})
+     /#\([0-9]\)
+	 \x表示完整字符集
+  \V 使用原义，使得只有反斜杠有特殊的意义。在查找 a.k.a时，使用/\Va.k.a 
+22.单词边界：
+	在搜索中 /<单词> 界定了单词的边界（<和>） 
+	在匹配模式中，只指定一部分边界： \zs指定匹配模式\ze
+22.查找
+	set wrapscan 开启循环查看
+	set hls 开启匹配高亮 hlsearch
+
+	:set nohlsearch :se hls! or :se nohls 关闭匹配高亮显示
+	:nohlsearch  :nol 暂时关闭查找高亮
+
+	:set incsearch :set is  预览第一处匹配（根据输入预览显示）
+	 
+	 /aaa<C-r><C-w> 补全预览匹配
+
+	 :%s///gn 统计当前模式匹配的个数
+
+	 :search-offset {offset} 匹配偏移，:h search-offset查看多种使用方式
+	 /search/e 光标移动到查找的末尾，
+	 //e 把查找域留空时，将重用上一次的查找模式。即在上一次的查找模式加末尾偏移
+	 设置可视模式下 * 用于查找光标下的单词：如果希望查找的东西，不是一个单词，可以先选中，再查找。:h visual-search 中提到：
+	 ：vmap X y/<C-R>"<CR>   可以使得，在可视模式下，X作为查找
+	 设置 * 和 # 作为选中模式中的查找：
+	 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+	 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+	 function! s:VSetSearch()
+		let temp=@s
+		norm! gv"sy
+		let @/ = '\V' . substitute(excape(@s,'/\'),'\n','\\n','g')
+		let @s = temp
+	endfunction
+	(visual star search 插件中也有)
+23.切换当前目录
+    vimrc 中添加，用F5快速切换
+    map <F5> :execute "cd" expand("%:h")<CR>
+ 
+   " 自动切换目录为当前编辑文件所在目录
+   au BufRead,BufNewFile,BufEnter * cd %:p:h
+24. 替换 substitute
+:[range]s/this/that/flag
+	flag :h s_flags
+ 	g 全局执行
+c 确认每一处替换
+n 不执行替换，只报告命令匹配打个数
+e 屏蔽错误提示信息
+& 重用上一次用过的flag
+替换域中的特殊字符（:h sub_replace-special）
+\r 插入一个换行符
+\t 插入一个制表符
+\\ 插入一个反斜杠
+\1 插入第一个子匹配
+\{1-9} 插入第x个子匹配
+\0 插入匹配模式的所有内容
+& 插入匹配模式的所有内容
+~  使用上一次调用:s时候打{string}
+\={Vim script} 执行{Vim Script}表达式;并将返回的结果作为替换{string}
+ 
+` 使用%作为当前文件的全局执行范围
+` flag c的时候，选项：（:h :s_c）
+y 替换此处匹配
+n 忽略此处匹配
+q 退出替换过程
+l last,替换此处匹配后退出
+a all,替换此处与之后所有的匹配
+<C-e> 向上滚动屏幕
+<C-y> 向下滚动屏幕
+` 将查找域留空进行替换（不过会对命令历史有影响）
+/findThis
+:%s//sustitudeThat/flag
+可以通过<C-r>/ 将上次查找的内容粘贴进来，就不会对命令历史造成影响了：
+:%s/<C-r>//That/flag
+ ` 用寄存器的内容替换
+    <C-r>{register} 将寄存器中的文本作为替换内容
+   为了避免寄存器中有特殊字符，可以引用寄存器中的内容：
+\=@{register}
+    eg.  :%s//\=@0/g    将上一次查找的内容替换为0寄存器中的内容
+0 寄存器是复制专用寄存器
+/ 寄存器是查找专用寄存器
+   重复上一次的substitute命令：
+    使用 g& (:h g&) 在整个文件内重复替换操作：
+   eg. :s/target/replacement/g
+         之后，再输入 g&，就可以在整个文件范围内重复上次的命令。等同于 :%s//~/&
+     使用:&&  重复上一次的替换，其中 第一个&是Ex命令，：&的组成部分，用于重复上一次的:substitute命令，第二个 &是重用上一个打:s命令打flag位
+  :{range}&&会替换范围/和高亮区域
+  :%&& 会替换整个文件范围内
+   修改vimrc 使得& 映射:&& 
+   nnoremap & :&&<CR>
+   xnoremap & :&&<CR>
+24.在多个文件中替换
+ 方法一，所有文件都执行：（argdo  所有文件都执行）
+    	1.在本文件中替换  :%s/target/replacement/g
+2.设置多文件
+  	:args **/*.txt   (打开所有文件)
+:set hidden        (启用后，可以在不保存文件改动打前提下跳转至其他文件) （技巧37）
+:argdo %s//replacement/ge    (所有文件都执行命令,并且忽略错误信息提示)
+方法二，只在需要执行打文件中执行
+1.再工程范围内执行查找 （:vimgrep 命令）
+:vimgrep  /<C-r>// **/*.txt 
+<C-r>/ 粘贴上次查找的东西  
+返回结果记录在quickfix列表中，使用 :copen可以开启quickfix窗口 
+2.编写:quickfixdo 命令的代替方案（substitution/qargs.vim）
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+function! QuickfixFilenames()
+let buffer_numbers={}
+for quickfix_item in getqflist()
+let fuffer_numbers[quickfix_item['bufnr']]=bufname(quickfix_item['bufnr']
+)
+endfor
+return join(map(values(buffer_numbers),'fnameescape(v:val)'))
+endfunction
+之后，运行:Qargs 会只加载quickfix列表中的文件
+3.运行其他：
+  :Qargs   (加载满足条件的文件)
+  :argdo %s//replacement/g
+  :argdo update
+连用命令（:Qargs | argdo %s//replacement/g | update） |为命令分隔符（:h :bar）
+25. global 命令
+     	:global 与Ex命令结合，在某个指定模式匹配上运行Ex命令
+:[range] global[!] /{pattern}/ [cmd]
+缺省情况range是整个文件%
+:global!  :vglobal (v -> invert 反转) 表示反转:global命令 （即不满足匹配的）
+1.结合删除命令    :delete :d 删除命令
+:g/{pattern}/d   删除所有匹配的行 
+Grep---> g/re/p   re表示regular expression ,p是print 是缺省的[cmd] .即全局正则表达式命令
+:v/{pattern}/d 只保留匹配行   :v 是:vglobal的简写
+
+2.结合复制命令 :yank   将匹配文本收集到寄存器中
+eg.将TODO项，收集起来
+1. :qaq  清空a寄存器
+2. :g/TODO/yank A    将满足的TODO项，依次添加的方式放入a寄存器
+3."ap 将TODO项粘贴出来   (:reg a   查看a寄存器中的内容)
+
+4.:g/TODO/t$  将所有TODO项复制到当前文档打末尾
+
+5.结合argdo 和 :bufdo 命令，可以实现 查找关键字  列表，查找引用 列表
+
+工具：
+1.Ctags
+ linux:
+	$ sudo apt-get install exuberant-ctags
+	$ brew install ctags
+	$ ctags --help    查看是否安装成功，如果没有，需要修改$PATH
+ window:
+	1.下载exuberant ctags (ctags58)
+	2.将解压后的ctags的目录添加到环境变量中
+	3.cmd,ctags --hlep  查看是否安装成功
+:set tags? (:h tags-option)  查看tags路径。 tags=./tags,tags  时候，vim在当前文件所在目录以及工作目录中查找标签文件。
+
+:!ctags -R    生成tags.从vim当前的工作目录开始，遍历所有的子目录，为每一个文件建立索引。
+	--exclude=.git  忽略 .git
+	--languages=-sql 语言为sql
+	:nnoremap <f5> :!ctags -R<CR> 使用f5快捷键
+:autocmd BufWritePost * call system("ctags -R")
+	每次保存文件的时候，自动执行ctags
+	autocommand功能，在某件事情发生时，调用一条命令，事件包括缓冲区的创建、打开或者保存等。
+《Effortless Ctags with Git》,通过git的回调机制，建立自动执行的Ctags
+<C-]>  跳转到定义的行 == :tag {keyword}  or  /{pattern}
+g<C-]> 跳转到定义，如果有多个定义，会列出选项。 == :tjump {keyword} or /{pattern}
+<C-]>  后，
+	:tselect 可以调出标签匹配列表
+	:tnext 跳转到下一处匹配
+	:tprev 跳转到上一处匹配
+	:tfirst 跳转到第一处匹配
+	:tlast 跳转到最后一处匹配
+	:pop 反向遍历
+
+gd     跳转到定义的字符，并高亮
+<C-t>  跳转后退。（<C-]方式跳转，vim会为访问过的标签维护一个历史列表）(:h tag-stack) == :pop
+
+2.Quickfix 列表 浏览错误信息 :h quickfix
+  列表：文件名  行号  列号（可选） 消息
+  :make[!] 产生的错误信息 :cn :cp :cl
+  :grep 时候查找到的匹配
+
+  :[count]cnext 
+  :[count]cprev
+  :cfirst
+  :clast
+  :cnfile 跳转到下一个文件中的第一项
+  :cpfile 跳转到上一个文件中的最后一项
+  :cc N 跳转到第 N项
+  :copen 打开quickfix窗口
+  :cclose 关闭quickfix窗口
+  :q 也可以关闭quickfix窗口
+
+  :lnext
+  :lprev
+  :ll N  跳转到列表位置的第n项
+
+  :lmake
+  :lgrep
+  :lvimgrep
+
+  在quickfix窗口，在光标所在列表项按<CR>,会打开相应的文件
+
+  :[count]colder 回溯到quickfix列表之前的某个版本
+  :[count]cnewer 回调比较新的列表
+
+定制外部编译器：
+	: compiler  查看vim所定义的编译器
+	: make  gvim无法使用
+	配置:make 的时候调用js nodelint[JSLint]命令行接口
+	 1.$ npm install nodelint -g          install nodelint
+	 2.makeprg (:h makeprg) 允许指定运行:make时候所调用的程序
+	   :setlocal makeprg=NODE_DISABLE_COLORS=1\ nodelint\ %   当前目录下，用nodelint编译
+		node_disable_colors=1  禁用颜色高
+	 3.用Nodelint的输出结果填充Quickfix列表 :h errorformat
+	   :setglobal errorformat?  查看如何解析 :make 产生的输出结果
+	   :setlocal efm=%A%f\,\ line\ %l\,\ character\ %c:%m,%Z%.%#,%-G.%#
+	    设置errorfomat  %f文件名 %l 行号，%m 错误信息
+	 4.设置，通过:compiler命令激活errorformat命令 :h :compiler
+		:compiler nodelint   激活编译器插件 nodelint
+	:args $VIMRUNTIME/compiler/*.vim 加载所有的compiler设定。
+	 ---->A1.3有为特定类型文件应用个性化设置
+
+18章 通过grep、vimgrep以及其他工具对整个工程进行查找
+ grep是Unix 的 shell命令工具
+1.
+ $ grep -n Waldo *   在当前目录的所有文件中查找单词 Waldo,-n 加入行号
+ $ vim goldrush.txt +9  +9表示到第9行
+ :grep 是对外部grep程序的包装(:h :grep),是的可以在vim内部使用grep
+ :grep Waldo *  默认添加了-n; -i 忽略大小写。
+ 
+ :grep 调用时，grepprg选项指定所调用的shell程序，grepformat选项指定如何解析来自:grep的输出结果。
+2.
+ :grep调用ack
+ Ubunbu 安装ack:
+ $ sudo apt-get install ack-grep   
+ $ sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack 创建符号链接
+ :set grepprg=ack\ --nogroup\ --column\ $*   使grep调用ack  --colum 显示列号
+ :set grepformat=%f:%l:%c:%m     设置解析格式，匹配显示行号（%c）
+3.Vim内部的Grep :vimgrep / :vim   (:vim[grep][!]0) /{pattern}/[g][j] {file} ...
+	g 为每处匹配创建一条记录，否则，只会为整行文本创建一项记录
+	j 让quickfix列表更新，但是不跳到第一处匹配处
+	{file} 不能为空，可接受与:args命令相同的参数
+19章 自动补全
+ infercase 修正补全大小写过滤
+ 1.<C-p> <C-n> <C-x> 在 插入模式 下 触发 自动补全
+ ----------------------------------
+ 命令             补全类型
+ ----------------------------------
+ <C-n>            普通关键字
+ <C-x><C-n>       当前缓冲区关键字 :h compl-current
+ <C-x><C-i>       包含文件关键字   :h compl-keyword
+ <C-x><C-]>       标签文件关键字   :h compl-tag
+ <C-x><C-k>       字典查找         :h compl-dictionary  :set spell 激活拼写检查功能
+ <C-x><C-l>       整行补全         :h compl-whole-line
+ <C-x><C-f>       文件名补全       :h compl-filename   只相对于工作目录的路径扩展，不是当前编辑文件的路径
+ <C-x><C-o>       全能（Omin）补全
+
+ 2.与补全弹出式菜单交互 :h popupmenu-completion
+   在插入模式下，<C-n> 与 <C-p> 触发关键字菜单
+   在菜单中，一下命令：
+   <C-n> / <Down>           自动补全的下一项 next
+   <C-p> / <Up>             自动补全的上一项 previous
+   <C-y>                    确认使用当前选项 yes
+   <C-e>                    还原最早输入的文本 exit
+   <C-h> <BS>               从当前匹配项中删除一个字符
+   <C-l>                    从当前匹配项中增加一个字符
+   {char}                   终止自动补全并插入字符{char}
+ 3.关键字来源
+  :ls!   查看缓冲区列表，如果选用当前缓冲区关键字，来源于缓冲区
+  文件包含，vim理解include. :set include? 查看vim支持的语言
+ 4.定制自动补全来源 :h complete
+ 使用complete选项，扫描关键字补全位置
+ 缺省为 complete=.,w,b,u,t,i
+ :set complete-=i  禁止扫描文件
+ :set complete+=k  激活字典功能补全
+
+ :cd - 切换至之前的目录 :h cd -
+ 5.根据上下文自动补全
+  全能补全，由vim实现的intellsense功能。
+  需要的基本设置为：
+  安装了全能补全功能插件：  :h compl-omni-filetypes 查看支持的完整列表
+  set nocompatible
+  filetype plugin on
+
+20章 拼写检查
+1.基础
+:set spell 显示拼音检查
+[s 拼写错误正向跳转
+]s 拼写错误反向跳转
+[num]z= 光标位于错误上的时候，获取更正建议列表  :h z=  num为更正列表的编号
+zg 把当前单词添加到拼写文件中  文件被保存到了 ~/.vim/spell/en.utf-8.add 中，如果en是设置的语言
+zw 把当前单词从拼写文件中删除
+zug 撤销针对当前单词的zg或zw命令
+:set spelllang=en_us 设置当前字典 :h 'spelllang'   :h spell-remarks
+2.为专业术语创建拼写文件
+  配置'spellfile'选项，指定一个文件路径，来保存zg zw命令添加删除的单词 :h 'spellfile'
+  eg.
+  setlocal spelllang=en_us   
+  setlocal spellfile=~/.vim/spell/en.utf-8.add   缺省路径
+  setlocal spellfile+=~/books/practical_vim/jargon.utf-8.add  指定位置
+3.插入模式下更正拼写错误
+  <C-x>s 正在拼写错误
+  (page306)
+ 
+ ------------
+ 第四章 可视模式
+ o :切换高亮选取活动端。当选中了之后，o会移动到选中的首或尾。
