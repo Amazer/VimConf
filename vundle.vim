@@ -2,21 +2,23 @@
 set runtimepath+=~/vimfiles/bundle/Vundle.vim/
 call vundle#rc('~/vimfiles/bundle/')
 Plugin 'gmarik/vundle'
-"python ²å¼ş£º
-Plugin 'tmhedberg/SimpyFold'    "ÕÛµş²å¼ş
-Plugin 'kien/ctrlp.vim'         "c-p ËÑË÷ÎÄ¼ş²å¼ş
-Plugin 'scrooloose/nerdtree'    "ÎÄ¼şä¯ÀÀ²å¼ş
-Plugin 'jistr/vim-nerdtree-tabs'    "ÎÄ¼şä¯ÀÀ²å¼ş Ê¹ÓÃtab¼ü
-Plugin 'scrooloose/syntastic' "¼ì²âÓï·¨¸ßÁÁ²å¼ş
-Plugin 'vim-scripts/indentpython.vim'   "python ×Ô¶¯Ëõ½ø²å¼ş
-Plugin 'nvie/vim-flake8'        "PEP8 ´úÂë·ç¸ñ¼ì²é
-Plugin 'jnurmine/Zenburn'       "ÅäÉ«·½°¸ ÖĞ¶ËÄ£Ê½
-Plugin 'altercation/vim-colors-solarized' "ÅäÉ«·½°¸ GUIÄ£Ê½
-Plugin 'tpope/vim-fugitive' "vimÖĞÖ´ĞĞGitÃüÁî 
+"python æ’ä»¶ï¼š
+Plugin 'tmhedberg/SimpyFold'    "æŠ˜å æ’ä»¶
+Plugin 'kien/ctrlp.vim'         "c-p æœç´¢æ–‡ä»¶æ’ä»¶
+Plugin 'scrooloose/nerdtree'    "æ–‡ä»¶æµè§ˆæ’ä»¶
+Plugin 'jistr/vim-nerdtree-tabs'    "æ–‡ä»¶æµè§ˆæ’ä»¶ ä½¿ç”¨tabé”®
+Plugin 'scrooloose/syntastic' "æ£€æµ‹è¯­æ³•é«˜äº®æ’ä»¶
+Plugin 'vim-scripts/indentpython.vim'   "python è‡ªåŠ¨ç¼©è¿›æ’ä»¶
+Plugin 'nvie/vim-flake8'        "PEP8 ä»£ç é£æ ¼æ£€æŸ¥
+Plugin 'jnurmine/Zenburn'       "é…è‰²æ–¹æ¡ˆ ä¸­ç«¯æ¨¡å¼
+Plugin 'altercation/vim-colors-solarized' "é…è‰²æ–¹æ¡ˆ GUIæ¨¡å¼
 
-"cs²å¼ş
+Plugin 'tpope/vim-fugitive' "vimä¸­æ‰§è¡ŒGitå‘½ä»¤ 
+Plugin 'tpope/vim-git' "git å‘½ä»¤é«˜äº®
+
+"csæ’ä»¶
 Plugin 'OmniSharp/omnisharp-vim' "Ominisharp-vim
-Plugin 'tpope/vim-dispatch' "Òì²½Ö´ĞĞ c#
+Plugin 'tpope/vim-dispatch' "å¼‚æ­¥æ‰§è¡Œ c#
 "ultisnips 
 Plugin 'SirVer/ultisnips' "Track the engine
 Plugin 'honza/vim-snippets' "
@@ -28,7 +30,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'
 
 
-"ack.vim ¿ìËÙËÑË÷ÎÄ¼ş
+"ack.vim å¿«é€Ÿæœç´¢æ–‡ä»¶
 "Plugin 'mileszs/ack.vim'
 "let g:ackprg='ag --nogroup --nocolor --column'
 
