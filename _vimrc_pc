@@ -2,20 +2,17 @@
 "winpos 0 0 "set the original windwo pos
 "set lines=140 columns=100
 "启动时候，全屏
-:au GUIEnter * simalt ~x
-"设置mapleader
-:let mapleader=","
-:nnoremap <leader>ev :e $MYVIMRC<cr>
-:nnoremap <leader>sv :so $MYVIMRC<cr>
+":au GUIEnter * simalt ~x
+""设置mapleader
+":let mapleader=","
+":nnoremap <leader>ev :e $MYVIMRC<cr>
+":nnoremap <leader>sv :so $MYVIMRC<cr>
 
 "设置ycm
 "set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
-set runtimepath+=~\VimNote\
-set runtimepath+=~\VimNote\vimfiles
-set runtimepath+=~\VimNote\vimfiles/colors
 
 "使用vundle的配置 
-so vundle.vim 
+so ~/vimfiles/vundle.vim 
 ""
 ""execute pathogen#infect()
 filetype plugin indent on
@@ -113,7 +110,7 @@ set autochdir
 ":autocmd!
 "
 ""保存文件时，自动更新ctags
-:autocmd BufWritePost * call system("ctags -R")
+":autocmd BufWritePost * call system("ctags -R")
 "
 ""文件打开时，光标恢复到上次的位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif

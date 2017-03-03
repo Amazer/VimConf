@@ -1,5 +1,5 @@
 "set vundle----
-"set runtimepath+=~/vimfiles/bundle/Vundle.vim/
+set runtimepath+=~/vimfiles/bundle/Vundle.vim/
 call vundle#rc('~/vimfiles/bundle/')
 Plugin 'gmarik/vundle'
 "python ²å¼þ£º
