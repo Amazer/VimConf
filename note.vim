@@ -1,6 +1,6 @@
 set encoding=utf-8
 
-function OpenFileLocation()
+function! OpenFileLocation()
 if(expand("%")!="")
 		execute "!start explorer /select,%"
 	else
