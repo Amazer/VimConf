@@ -11,6 +11,9 @@
 "设置ycm
 "set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
 
+"关闭提示音
+set vb t_vb=
+
 "使用vundle的配置 
 so ~/vimfiles/vundle.vim 
 ""
