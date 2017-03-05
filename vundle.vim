@@ -3,7 +3,7 @@ set runtimepath+=~/vimfiles/bundle/Vundle.vim/
 call vundle#rc('~/vimfiles/bundle/')
 Plugin 'gmarik/vundle'
 "python 插件：
-Plugin 'tmhedberg/SimpyFold'    "折叠插件
+Plugin 'tmhedberg/SimpylFold'    "折叠插件
 Plugin 'kien/ctrlp.vim'         "c-p 搜索文件插件
 Plugin 'scrooloose/nerdtree'    "文件浏览插件
 Plugin 'jistr/vim-nerdtree-tabs'    "文件浏览插件 使用tab键
