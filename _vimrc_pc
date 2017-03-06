@@ -36,6 +36,16 @@ function! s:VSetSearch()
 	let @s = temp
 endfunction
 
+function! OpenFileLocation()
+if(expand("%")!="")
+		execute "!start explorer /select,%"
+	else
+		execute "!start explorer /select,%:p:h"
+	endif
+endfunction
+
+:nnoremap cm :call OpenFileLocation()<CR>
+
 "展开当前目录
 cnoremap <expr> %% getcmdtype( )==':'? expand('%:h').'/':'%%'
 
@@ -111,8 +121,9 @@ set tags=tags
 set autochdir
 
 
+aug configPc
 "先清除一下所有命令
-":autocmd!
+:autocmd!
 "
 ""保存文件时，自动更新ctags
 ":autocmd BufWritePost * call system("ctags -R")
@@ -131,3 +142,4 @@ au FileType cs so ~/vimfiles/cs.vim
 "
 "如果文件是.vim，使用vim的设置
 au FileType vim so ~/vimfiles/vim.vim
+aug End
