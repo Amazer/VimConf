@@ -15,18 +15,17 @@ set is
 :vnoremap <s-tab> <gv
 :inoremap jj <esc>
 
-":nmap <c-o> :vsc View.NavigateBackward<CR>
 :nnoremap <c-p> :vsc View.NavigateBackward<CR>
 :nnoremap <c-n> :vsc View.NavigateForward<CR>
 
 :nnoremap ,t :vsc Window.NextTab<CR>
 :nnoremap ,r :vsc Window.PreviousTab<CR>
-:nnoremap ,nv :vsc Window.NewVerticalTabGroup<CR>
-:nnoremap ,nh :vsc Window.NewHorizontalTabGroup<CR>
-:nnoremap ,mn :vsc Window.MovetoNextTabGroup<CR>
-:nnoremap ,mp :vsc Window.MovetoPreviousTabGroup<CR>
-:nnoremap ,wn :vsc Window.NextDocumentWindow<CR>
-:nnoremap ,wp :vsc Window.PreviousDocumentWindow<CR>
+":nnoremap ,nv :vsc Window.NewVerticalTabGroup<CR>
+":nnoremap ,nh :vsc Window.NewHorizontalTabGroup<CR>
+":nnoremap ,mn :vsc Window.MovetoNextTabGroup<CR>
+":nnoremap ,mp :vsc Window.MovetoPreviousTabGroup<CR>
+:nnoremap ,n :vsc Window.NextDocumentWindow<CR>
+:nnoremap ,p :vsc Window.PreviousDocumentWindow<CR>
 
 "20161014 added
 "map pd to peekDefinition
@@ -64,13 +63,14 @@ set is
 :nnoremap gr :vsc VAssistX.RefactorRename<CR>
 
 "查看函数列表 list methods
-:nnoremap lm :vsc VAssistX.ListMethodsInCurrentFile<CR>
+:nnoremap zm :vsc VAssistX.ListMethodsInCurrentFile<CR>
 
 "查找所有引用--
-:nnoremap ca :vsc Edit.FindAllReferences<CR>
+":nnoremap ca :vsc Edit.FindAllReferences<CR>
+:nnoremap ca :vsc VAssistX.FindReferences<CR>
 
 "查找所有引用
-:nnoremap cr :vsc VAssistX.FindReferences<CR>
+":nnoremap cr :vsc VAssistX.FindReferences<CR>
 
 "打开查看类的对话框
 :nnoremap cs :vsc VAssistX.FindSymbolDialog<CR>
@@ -115,5 +115,14 @@ set is
 :nnoremap zp :vsc VAssistX.RefactorImplementInterface<CR>
 
 "可视模式中，使用 * 和 # 查找
-:vnoremap * y/<C-r>+<CR>
-:vnoremap # y?<C-r>+<CR>
+":vnoremap * y/<C-r>+<CR>
+":vnoremap # y?<C-r>+<CR>
+:vnoremap * "/y/<C-r>/<CR>
+:vnoremap # "/y?<C-r>/<CR>
+
+"Tsvn 命令
+":nnoremap ,lg :vsc TSVN.ShowLogforfile<cr>
+":nnoremap ,dif :vsc TSVN.ShowDifferences<cr>
+":nnoremap ,cm :vsc TSVN.Commit<cr>
+
+:nnoremap <space> zo!
