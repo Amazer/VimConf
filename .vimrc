@@ -48,6 +48,6 @@ let g:ycm_semantic_triggers={
 			\ 'c' : ['->','.'],
 			\ 'erlang' : [':'],
 			\ 'lua' : ['.',':'],
-			\ 'cspc,java,javascript,typescript,d,python,go':['.'],
+			\ 'cs,java,javascript,typescript,d,python,go':['.'],
 			\ }
 
