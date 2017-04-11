@@ -85,10 +85,15 @@ flags = [
 '-isystem',
 '/usr/include',
 '/-isystem',
-'/usr/include/c++/4.9.2',
+'/usr/include/c++/5.4.0',
 '-isystem',
 '/usr/include',
+'/usr/include/x86_64-linux-gnu',
 '/usr/include/x86_64-linux-gnu/c++',
+'/usr/include/x86_64-linux-gnu/c++/5.4.0',
+#add by cyc python include
+'/usr/include/x86_64-linux-gnu/python2.7',
+'/usr/include/x86_64-linux-gnu/sys',
 ]
 
 
@@ -190,4 +195,7 @@ def FlagsForFile( filename, **kwargs ):
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
 
-  return { 'flags': final_flags }
+  return { 
+          'flags': final_flags,
+          'do_cache':True
+          }
