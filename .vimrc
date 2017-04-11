@@ -28,6 +28,7 @@ set sta
 
 set backspace=indent,eol,start
 
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/VimNote/.ycm_extra_conf.py'
 set completeopt=longest,menu
 autocmd InsertLeave *if pumvisible()==0 | pclose|endif
 nnoremap <leader>jd :YcmCompleter GoToDefinition ElseDeclaration<cr>
