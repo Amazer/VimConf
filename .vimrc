@@ -6,7 +6,8 @@ let mapleader=","
 
 set nu
 
-so ~/.vim/vundle.vim
+"so ~/.vim/vundle.vim
+so ~/.vim/bundle/VimNote/linux_vundle.vim
 
 filetype plugin indent on
 filetype on
@@ -42,6 +43,7 @@ let g:ycm_complete_in_strings=1
 let g:ycm_autoclose_preview_window_after_completion=1 
 let g:ycm_key_invoke_completion='<S-Space>'
 let g:ycm_cache_omnifunc=0
+let g:ycm_python_binary_path='/usr/bin/python2.7'
 let g:ycm_semantic_triggers={
 			\ 'c' : ['->','.'],
 			\ 'erlang' : [':'],
