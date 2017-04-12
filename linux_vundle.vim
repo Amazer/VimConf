@@ -4,7 +4,7 @@ set runtimepath+=~/.vim/bundle/Vundle.vim/
 call vundle#rc('~/.vim/bundle/')
 Plugin 'gmarik/vundle'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'Amazer/VimNote'
+Plugin 'Amazer/VimConf'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
