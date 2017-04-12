@@ -7,7 +7,7 @@ let mapleader=","
 set nu
 
 "so ~/.vim/vundle.vim
-so ~/.vim/bundle/VimNote/linux_vundle.vim
+so ~/.vim/bundle/VimConf/linux_conf/linux_vundle.vim
 
 filetype plugin indent on
 filetype on
