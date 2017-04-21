@@ -90,3 +90,32 @@ let g:jedi#use_tabs_not_buffers=1
 let g:jedi#popup_on_dot=1
 let g:jedi#popup_select_first=1
 let g:jedi#completions_enable=1
+
+"--complier command by cyc form learn vimscript the hard way
+if !exists("g:py_command")
+	let g:py_command='python'
+endif
+function! PyCompileAndRunFile()
+	silent !clear
+	execute "!".g:py_command." " . bufname("%")
+endfunction
+
+nnoremap <buffer> <localleader>r :call PyCompileAndRunFile()<cr>
+nnoremap <buffer> <localleader>b :call PyShowResultInVim()<cr>
+
+function! PyShowResultInVim()
+	"get result
+	let result=system(g:py_command ." ". bufname("%"))
+	echom result
+
+	"open a new split and set it up
+    vsplit __Py_Result__
+    normal! ggdG
+    setlocal filetype=pyresult
+    setlocal buftype=nofile
+
+	"Insert the result
+    call append(0,split(result,'\v\n'))
+endfunction
+
+

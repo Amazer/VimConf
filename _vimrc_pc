@@ -76,7 +76,8 @@ syntax on
 "colorscheme solarized
 "colorscheme Zenburn
 "colorscheme candy
-colorscheme Jellybeans
+"colorscheme Jellybeans
+colorscheme desert
 "设置退格键
 set backspace=indent,eol,start
 
@@ -98,6 +99,7 @@ set ai "自动缩进
 set sw=4 "自动缩进宽度
 set ts=4 " tabstop 制表符宽度
 set sta  "开启smarttab 在插入模式
+set expandtab
 
 "设置普通模式快捷键为jj
 :inoremap jj <esc>
@@ -113,11 +115,14 @@ set sta  "开启smarttab 在插入模式
 :vnoremap d "+d
 
 "设置(),[],{},""成对出现
-:inoremap ( ()<left>
-:inoremap [ []<left>
-:inoremap { {}<left>
-:inoremap " ""<left>
+":inoremap ( ()<left>
+":inoremap [ []<left>
+":inoremap { {}<left>
+":inoremap " ""<left>
 ":nnoremap <f5> :!ctags _R<CR>
+"
+"设置fold
+:nnoremap <space> za
 
 "设置tags
 set tags=tags
@@ -142,7 +147,12 @@ au BufNewFile,BufRead *.note so ~/vimfiles/note.vim
 "
 ""如果文件是cs，使用cs的设置
 au FileType cs so ~/vimfiles/cs.vim
+
+"au FileType cs so ~/vimfiles/csharp.vim
 "
 "如果文件是.vim，使用vim的设置
 au FileType vim so ~/vimfiles/vim.vim
+"如果是erlang
+au FileType erlang so ~/vimfiles/erlang.vim
+
 aug End
