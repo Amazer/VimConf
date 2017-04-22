@@ -2,11 +2,12 @@
 "winpos 0 0 "set the original windwo pos
 "set lines=140 columns=100
 "启动时候，全屏
-":au GUIEnter * simalt ~x
+:au GUIEnter * simalt ~x
 ""设置mapleader
-":let mapleader=","
-":nnoremap <leader>ev :e $MYVIMRC<cr>
-":nnoremap <leader>sv :so $MYVIMRC<cr>
+:let mapleader=","
+:nnoremap <leader>ev :e ~/vimfiles/VimConf/_vimrc_pc<cr>
+:nnoremap <leader>sv :so ~/vimfiles/VimConf/_vimrc_pc<cr>
+:nnoremap <leader>, :so %<cr>
 
 "设置ycm
 "set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
@@ -20,7 +21,7 @@ set vb t_vb=
 au GuiEnter * set t_vb=
 
 "使用vundle的配置 
-so ~/vimfiles/vundle.vim 
+so ~/vimfiles/VimConf/vundle.vim 
 ""
 ""execute pathogen#infect()
 filetype plugin indent on
@@ -140,19 +141,21 @@ aug configPc
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 "
 ""如果文件是python，使用python的设置
-au FileType python so ~/vimfiles/py.vim
+au FileType python so ~/vimfiles/VimConf/py.vim
 "
 ""如果文件是note,使用note的设置（自定义的note类型）
-au BufNewFile,BufRead *.note so ~/vimfiles/note.vim
+au BufNewFile,BufRead *.note so ~/vimfiles/VimConf/note.vim
 "
 ""如果文件是cs，使用cs的设置
-au FileType cs so ~/vimfiles/cs.vim
+au FileType cs so ~/vimfiles/VimConf/cs.vim
+"cs complete
+au FileType cs so ~/vimfiles/VimConf/cs_ycm_omni.vim
 
-"au FileType cs so ~/vimfiles/csharp.vim
+"au FileType cs so ~/vimfiles/VimConf/csharp.vim
 "
 "如果文件是.vim，使用vim的设置
-au FileType vim so ~/vimfiles/vim.vim
+au FileType vim so ~/vimfiles/VimConf/vim.vim
 "如果是erlang
-au FileType erlang so ~/vimfiles/erlang.vim
+au FileType erlang so ~/vimfiles/VimConf/erlang.vim
 
 aug End
