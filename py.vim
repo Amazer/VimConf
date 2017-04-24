@@ -1,7 +1,11 @@
 set encoding=utf-8
 
 "设置ycm
-set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
+"set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
+
+"let g:ycm_global_ycm_extra_conf = '~/vim-ycm-20161024/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = 'C:/Python27'
+let g:ycm_show_diagnostics_ui = 0
 
 "python PEP8 缩进标准
 set tabstop=4
@@ -38,8 +42,9 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 "折叠
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za     "使用空格键折叠和取消折叠
 
+"使用空格键折叠和取消折叠
+nnoremap <space> za     
 "SimpyFold 插件，看到在折叠代码的文档字符串
 let g:SimpyFold_docstring_preview=1
 
@@ -54,8 +59,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "设置ycm 的python
-let g:ycm_autoclose_preview_window_after_completion=1	"完成操作之后，自动补全窗口不消失
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR> "转到定义快捷方式
+"完成操作之后，自动补全窗口不消失
+let g:ycm_autoclose_preview_window_after_completion=1	
+"转到定义快捷方式
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR> 
 
 "virtualenv 虚拟环境的支持 
 "python with virtualenv support
