@@ -64,3 +64,9 @@ if 'VIRTUAL_ENV' in os.environ:
 	activate_this=os.path.join(project_base_dir,'bin/activate_this.py')
 	execfile(activate_this,dict(__file__=activate_this))
 EOF
+
+"filetype auto command setting
+augroup configPc
+	autocmd!
+	autocmd BufReadPost * if line("'\"")>0|if line("'\"")<=line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+	autocmd FileType python so ~/.vim/bundle/VimConf/linux_conf/py.vim
