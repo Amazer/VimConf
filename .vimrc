@@ -30,7 +30,7 @@ set sta
 set backspace=indent,eol,start
 
 "ycm config
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/VimNote/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/VimConf/.ycm_extra_conf.py'
 nnoremap <leader>jd :YcmCompleter GoToDefinition ElseDeclaration<cr>
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
