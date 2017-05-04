@@ -1,7 +1,7 @@
 let maplocalleader=','
 
 set encoding=utf-8
-let g:ycm_python_binary_path='/usr/lib/python2.7'
+"let g:ycm_python_binary_path='/usr/lib/python2.7'
 let g:ycm_show_diagnostics_ui=0
 
 "python PEP8 缩进标准
