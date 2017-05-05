@@ -1,8 +1,9 @@
 "set vundle----
-set runtimepath+=~/vimfiles/bundle/Vundle.vim/
 if has("win32")
+    set runtimepath+=~/vimfiles/bundle/Vundle.vim/
     call vundle#rc('~/vimfiles/bundle/')
 else
+    set runtimepath+=~/.vim/bundle/Vundle.vim/
     call vundle#rc('~/.vim/bundle/')
 endif
 "YouComplete
