@@ -4,7 +4,7 @@ set encoding=utf-8
 "set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
 
 "let g:ycm_global_ycm_extra_conf = '~/vim-ycm-20161024/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_python_binary_path = 'C:/Python27'
+"let g:ycm_python_binary_path = 'C:/Python27'
 let g:ycm_show_diagnostics_ui = 0
 
 "python PEP8 缩进标准
