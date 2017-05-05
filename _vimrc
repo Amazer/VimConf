@@ -15,8 +15,13 @@ endif
 "关闭提示音
 set vb t_vb=
 "VimConf  global settings
-let g:vimconf_vundle_conf='~/vimfiles/vundle.vim'
-let g:vimconf_path='~/vimfiles/bundle/VimConf'
+if has("win32")
+    let g:vimconf_vundle_conf='~/vimfiles/bundle/VimConf/vundle.vim'
+    let g:vimconf_path='~/vimfiles/bundle/VimConf'
+else
+    let g:vimconf_vundle_conf='~/.vim/bundle/VimConf/vundle.vim'
+    let g:vimconf_path='~/.vim/bundle/VimConf'
+endif
 
 let mapleader=","
 "设置普通模式快捷键为jj
