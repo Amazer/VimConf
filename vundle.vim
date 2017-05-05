@@ -3,6 +3,7 @@ if has("win32")
     set runtimepath+=~/vimfiles/bundle/Vundle.vim/
     call vundle#rc('~/vimfiles/bundle/')
 else
+    set fileencoding=utf-8
     set runtimepath+=~/.vim/bundle/Vundle.vim/
     call vundle#rc('~/.vim/bundle/')
 endif
@@ -11,13 +12,20 @@ Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'gmarik/vundle'
 "python 插件：
-Plugin 'tmhedberg/SimpylFold'    "折叠插件
-Plugin 'kien/ctrlp.vim'         "c-p 搜索文件插件
-Plugin 'scrooloose/nerdtree'    "文件浏览插件
-Plugin 'jistr/vim-nerdtree-tabs'    "文件浏览插件 使用tab键
-"Plugin 'scrooloose/syntastic' "检测语法高亮插件
-Plugin 'vim-scripts/indentpython.vim'   "python 自动缩进插件
-Plugin 'nvie/vim-flake8'        "PEP8 代码风格检查
+"折叠插件
+Plugin 'tmhedberg/SimpylFold'    
+"c-p 搜索文件插件
+Plugin 'kien/ctrlp.vim'         
+"文件浏览插件
+Plugin 'scrooloose/nerdtree'    
+"文件浏览插件 使用tab键
+Plugin 'jistr/vim-nerdtree-tabs'    
+"检测语法高亮插件
+"Plugin 'scrooloose/syntastic' 
+"python 自动缩进插件
+Plugin 'vim-scripts/indentpython.vim'   
+"PEP8 代码风格检查
+Plugin 'nvie/vim-flake8'        
 Plugin 'rkulla/pydiction'
 Plugin 'majutsushi/tagbar'
 Plugin 'gregsexton/MatchTag'
@@ -26,23 +34,34 @@ Plugin 'heavenshell/vim-pydocstring'
 "Plugin 'ybian/smartim'
 
 "配色方案
-Plugin 'jnurmine/Zenburn'       "配色方案 终端模式
-Plugin 'altercation/vim-colors-solarized' "配色方案 GUI模式
-Plugin 'Lokaltog/vim-distinguished' "distinguished 配色方案
-Plugin 'nanotech/jellybeans.vim' "jellybeans 配色方案
-Plugin 'ryanb/dotfiles' "dotfiles 配色方案
+"配色方案 终端模式
+Plugin 'jnurmine/Zenburn'       
+"配色方案 GUI模式
+Plugin 'altercation/vim-colors-solarized' 
+"distinguished 配色方案
+Plugin 'Lokaltog/vim-distinguished' 
+"jellybeans 配色方案
+Plugin 'nanotech/jellybeans.vim' 
+"dotfiles 配色方案
+Plugin 'ryanb/dotfiles' 
 
 
-"Plugin 'tpope/vim-fugitive' "vim中执行Git命令 
-Plugin 'Amazer/vim-fugitive' "vim中执行Git命令 
-Plugin 'tpope/vim-git' "git 命令高亮
+"vim中执行Git命令 
+"Plugin 'tpope/vim-fugitive' 
+""vim中执行Git命令 
+Plugin 'Amazer/vim-fugitive' 
+"git 命令高亮
+Plugin 'tpope/vim-git' 
 
 "cs插件
-"Plugin 'OmniSharp/omnisharp-vim' "Ominisharp-vim
-Plugin 'tpope/vim-dispatch' "异步执行 c#
+""Ominisharp-vim
+"Plugin 'OmniSharp/omnisharp-vim' 
+""异步执行 c#
+Plugin 'tpope/vim-dispatch' 
 Plugin 'vim-syntastic/syntastic' 
 "ultisnips 
-Plugin 'SirVer/ultisnips' "Track the engine
+""Track the engine
+Plugin 'SirVer/ultisnips' 
 Plugin 'honza/vim-snippets' "
 
 "Omnisharp plugins
