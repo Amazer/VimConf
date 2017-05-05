@@ -1,10 +1,10 @@
 "set vundle----
 if has("win32")
-    set runtimepath+=~/vimfiles/bundle/Vundle.vim/
+    set runtimepath+=~/vimfiles/bundle/vundle/
     call vundle#rc('~/vimfiles/bundle/')
 else
     set fileencoding=utf-8
-    set runtimepath+=~/.vim/bundle/Vundle.vim/
+    set runtimepath+=~/.vim/bundle/vundle/
     call vundle#rc('~/.vim/bundle/')
 endif
 "YouComplete
