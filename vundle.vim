@@ -13,6 +13,12 @@ Plugin 'jistr/vim-nerdtree-tabs'    "文件浏览插件 使用tab键
 "Plugin 'scrooloose/syntastic' "检测语法高亮插件
 Plugin 'vim-scripts/indentpython.vim'   "python 自动缩进插件
 Plugin 'nvie/vim-flake8'        "PEP8 代码风格检查
+Plugin 'rkulla/pydiction'
+Plugin 'majutsushi/tagbar'
+Plugin 'gregsexton/MatchTag'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'heavenshell/vim-pydocstring'
+"Plugin 'ybian/smartim'
 
 "配色方案
 Plugin 'jnurmine/Zenburn'       "配色方案 终端模式
@@ -63,9 +69,11 @@ Plugin 'vim-erlang/vim-erlang-runtime'
 "Plugin 'mileszs/ack.vim'
 "let g:ackprg='ag --nogroup --nocolor --column'
 
-"Bundle 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
 " evervim
 Plugin 'kakkyz81/evervim'
+
+Plugin 'thinca/vim-ref'
 call vundle#end()
 "set vundle end
