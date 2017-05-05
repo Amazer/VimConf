@@ -78,8 +78,8 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 "nerdtree-tabs  插件在python中打开
-let g:nerdtree_tabs_open_on_console_startup = 1
-let g:nerdtree_tabs_open_on_gui_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 0
+let g:nerdtree_tabs_open_on_gui_startup = 0
 
 "vim-flake8 PEP8风格检查插件 配置
 let python_highlight_all=1
