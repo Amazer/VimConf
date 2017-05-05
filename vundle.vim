@@ -1,6 +1,10 @@
 "set vundle----
 set runtimepath+=~/vimfiles/bundle/Vundle.vim/
-call vundle#rc('~/vimfiles/bundle/')
+if has("win32")
+    call vundle#rc('~/vimfiles/bundle/')
+else
+    call vundle#rc('~/.vim/bundle/')
+endif
 "YouComplete
 Plugin 'Valloric/YouCompleteMe'
 
