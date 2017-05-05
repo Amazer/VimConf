@@ -1,7 +1,10 @@
 部分vim笔记和vim配置
 
-1.clone 工程到 ~/vimfiles。 vimfilse文件夹，在windowns上，在gvim的runtimepath中。
-2.将_vimrc放到 ~/下 
+1.clone 到bundle下
+2.在自己的.vimrc/_vimrc中，so VimConf文件夹下的_vimrc
 
-_vimrc会引用vimfiles中的_vimrc_pc配置
-以后如果有修改，直接修改vimfiles下的_vimrc_pc等文件
+ps.
+1.需要vundle插件  gmarik/vundle
+2.修改_vimrc中的全局路径，pc和linux下可能会有不同
+3.vundle.vim文件中，修改vundle的runtimepath成自己路径的
+
