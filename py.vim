@@ -62,7 +62,9 @@ nnoremap <C-H> <C-W><C-H>
 "完成操作之后，自动补全窗口不消失
 let g:ycm_autoclose_preview_window_after_completion=1	
 "转到定义快捷方式
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR> 
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_seed_identifiers_with_syntax=1
+"map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR> 
 
 "virtualenv 虚拟环境的支持 
 "python with virtualenv support
@@ -92,11 +94,21 @@ syntax on
 "endif
 
 "----jedi-vim config
+let g:jedi#goto_command="gd"
+let g:jedi#goto_assignments_command="<c-]>"
+let g:jedi#usages_command="cj"
+let g:jedi#documentation_command="<c-g>"
+let g:jedi#rename_command="gr"
+
 let g:jedi#auto_initialization=1
 let g:jedi#use_tabs_not_buffers=1
 let g:jedi#popup_on_dot=1
-let g:jedi#popup_select_first=1
-let g:jedi#completions_enable=1
+let g:jedi#popup_select_first=0
+let g:jedi#completions_enabled=1
+let g:jedi#show_call_signatures="0"
+"pydiction--
+let g:pydiction_location='~/vimfiles/bundle/pydiction/complete-dict'
+let g:pydiction_menu_height=30
 
 "--complier command by cyc form learn vimscript the hard way
 if !exists("g:py_command")
@@ -125,4 +137,11 @@ function! PyShowResultInVim()
     call append(0,split(result,'\v\n'))
 endfunction
 
+"auto complete form own file module
+python << EOF
+import os
+import sys
+sys.path.append(os.getcwd())
+sys.path.append("c:/Python27/")
+EOF
 
