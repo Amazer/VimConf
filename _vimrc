@@ -22,8 +22,8 @@ let mapleader=","
 "设置普通模式快捷键为jj
 :inoremap jj <esc>
 
-:nnoremap <leader>ev :execute 'e '.g:vimconf_path.'/_vimrc_pc'<cr> 
-:nnoremap <leader>sv :execute 'so '.g:vimconf_path.'/_vimrc_pc'<cr> 
+:nnoremap <leader>ev :execute 'e '.g:vimconf_path.'/_vimrc'<cr> 
+:nnoremap <leader>sv :execute 'so '.g:vimconf_path.'/_vimrc'<cr> 
 
 "使用vundle的配置 
 "使用 execute 执行命令
