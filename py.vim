@@ -54,11 +54,6 @@ let g:SimpyFold_docstring_preview=1
 "横向模具，新文件在当前文件右侧打开
 set splitbelow
 set splitright
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 "设置ycm 的python
 "完成操作之后，自动补全窗口不消失
