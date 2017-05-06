@@ -109,7 +109,7 @@ let g:jedi#popup_select_first=0
 let g:jedi#completions_enabled=1
 let g:jedi#show_call_signatures="0"
 "pydiction--
-if has("win32"):
+if has("win32")
     let g:pydiction_location='~/vimfiles/bundle/pydiction/complete-dict'
 else
     let g:pydiction_location='~/.vim/bundle/pydiction/complete-dict'
@@ -143,7 +143,7 @@ function! PyShowResultInVim()
 	"Insert the result
     call append(0,split(result,'\v\n'))
 endfunction
-if has("win32"):
+if has("win32")
 "auto complete form own file module
 python << EOF
 import os
