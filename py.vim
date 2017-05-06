@@ -1,5 +1,7 @@
 set encoding=utf-8
 
+let maplocalleader=','
+
 "设置ycm
 "set runtimepath+=~/vim-ycm-20161024/YouCompleteMe
 
@@ -141,7 +143,7 @@ function! PyShowResultInVim()
 	"Insert the result
     call append(0,split(result,'\v\n'))
 endfunction
-if has("win32")
+if has("win32"):
 "auto complete form own file module
 python << EOF
 import os
