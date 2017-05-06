@@ -141,7 +141,7 @@ function! PyShowResultInVim()
 	"Insert the result
     call append(0,split(result,'\v\n'))
 endfunction
-
+if has("win32")
 "auto complete form own file module
 python << EOF
 import os
@@ -149,6 +149,7 @@ import sys
 sys.path.append(os.getcwd())
 sys.path.append("c:/Python27/")
 EOF
+endif
 
 "python code format command
 "install google/yapf (github) :pip install yapf
