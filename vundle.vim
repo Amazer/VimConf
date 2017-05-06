@@ -99,5 +99,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'kakkyz81/evervim'
 
 Plugin 'thinca/vim-ref'
+
+"extension for fugitive.vim Gbrower
+Plugin 'tpope/vim-rhubarb'
 call vundle#end()
 "set vundle end
