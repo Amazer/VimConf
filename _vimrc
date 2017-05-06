@@ -31,6 +31,13 @@ let mapleader=","
 :nnoremap <leader>sv :execute 'so '.g:vimconf_path.'/_vimrc'<cr> 
 :nnoremap <leader>, :execute 'so %'<cr> 
 
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "使用vundle的配置 
 "使用 execute 执行命令
 execute 'so '.g:vimconf_vundle_conf
