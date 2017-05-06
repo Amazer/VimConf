@@ -29,6 +29,7 @@ let mapleader=","
 
 :nnoremap <leader>ev :execute 'e '.g:vimconf_path.'/_vimrc'<cr> 
 :nnoremap <leader>sv :execute 'so '.g:vimconf_path.'/_vimrc'<cr> 
+:nnoremap <leader>, :execute 'so %'<cr> 
 
 "使用vundle的配置 
 "使用 execute 执行命令
@@ -64,13 +65,13 @@ cnoremap <expr> %% getcmdtype( )==':'? expand('%:h').'/':'%%'
 
 "设置文件编码格式
 set encoding=utf-8
-set fileencodings=utf-8,chinese,latin-1
+"set fileencodings=utf-8,chinese,latin-1
 
-if has("win32")
-    set fileencoding=chinese
-else
-    set fileencoding=utf-8
-endif
+"if has("win32")
+"    set fileencoding=chinese
+"else
+"    set fileencoding=utf-8
+"endif
 
 "解决consle输出乱码
 language messages zh_CN.utf-8
