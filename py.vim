@@ -145,3 +145,8 @@ sys.path.append(os.getcwd())
 sys.path.append("c:/Python27/")
 EOF
 
+"python code format command
+"install google/yapf (github) :pip install yapf
+"map gq to format python codes
+nnoremap gq :0,$!yapf<cr>
+
