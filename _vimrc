@@ -31,6 +31,16 @@ let mapleader=","
 :nnoremap <leader>sv :execute 'so '.g:vimconf_path.'/_vimrc'<cr> 
 :nnoremap <leader>, :execute 'so %'<cr> 
 
+"minibufexpl config
+"在minibufexpl中的时候，
+"<Tab> 循环向前切换到每个buffer名上
+"<S-Tab> 循环向后切换
+"<Enter> 打开光标所在的buffer
+" d 删除光标所在的buffer
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
