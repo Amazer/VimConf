@@ -34,12 +34,12 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 :inoremap <F5> <esc>:!python %<CR>
 
 "设置vim的注释	
-:inoremap <leader>i <esc>:s/^/\#/<CR>i
-:inoremap <leader>u <esc>:s/\#/<CR>i
-:vnoremap <leader>i :s/^/\#/<CR>
-:vnoremap <leader>u :s/\#/<CR>
-:nnoremap <leader>i :s/^/\#/<CR>
-:nnoremap <leader>u :s/\#/<CR>
+:inoremap <leader>i <esc>:s/^/\# /<CR>i
+:inoremap <leader>u <esc>:s/\# /<CR>i
+:vnoremap <leader>i :s/^/\# /<CR>
+:vnoremap <leader>u :s/\# /<CR>
+:nnoremap <leader>i :s/^/\# /<CR>
+:nnoremap <leader>u :s/\# /<CR>
 
 "折叠
 set foldmethod=indent
