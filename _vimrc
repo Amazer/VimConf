@@ -1,18 +1,18 @@
 if has("win32")
-    "ÉèÖÃ´°¿ÚÎ»ÖÃ×î´ó»¯
-    "Æô¶¯Ê±ºò£¬È«ÆÁ
+    "è®¾ç½®çª—å£ä½ç½®æœ€å¤§åŒ–
+    "å¯åŠ¨æ—¶å€™ï¼Œå…¨å±
     :au GUIEnter * simalt ~x
-    "¹Ø±ÕÉÁÆÁÌáÊ¾
+    "å…³é—­é—ªå±æç¤º
     au GuiEnter * set t_vb=
-    "ÉèÖÃ ²»ÏÔÊ¾²Ëµ¥À¸ºÍ¹¤¾ßÀ¸
+    "è®¾ç½® ä¸æ˜¾ç¤ºèœå•æ å’Œå·¥å…·æ 
     :set guioptions-=m
     :set guioptions-=T
-    "½â¾ö²Ëµ¥ÂÒÂë
+    "è§£å†³èœå•ä¹±ç 
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
 endif
 
-"¹Ø±ÕÌáÊ¾Òô
+"å…³é—­æç¤ºéŸ³
 set vb t_vb=
 "VimConf  global settings
 if has("win32")
@@ -24,7 +24,7 @@ else
 endif
 
 let mapleader=","
-"ÉèÖÃÆÕÍ¨Ä£Ê½¿ì½İ¼üÎªjj
+"è®¾ç½®æ™®é€šæ¨¡å¼å¿«æ·é”®ä¸ºjj
 :inoremap jj <esc>
 
 :nnoremap <leader>ev :execute 'e '.g:vimconf_path.'/_vimrc'<cr> 
@@ -38,16 +38,16 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"Ê¹ÓÃvundleµÄÅäÖÃ 
-"Ê¹ÓÃ execute Ö´ĞĞÃüÁî
+"ä½¿ç”¨vundleçš„é…ç½® 
+"ä½¿ç”¨ execute æ‰§è¡Œå‘½ä»¤
 execute 'so '.g:vimconf_vundle_conf
 filetype plugin indent on
 
-"nerdtree-tabs  ²å¼ş²»´ò¿ª
+"nerdtree-tabs  æ’ä»¶ä¸æ‰“å¼€
 let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
-"¿ÉÊÓÄ£Ê½ÖĞ£¬Ê¹ÓÃ * ºÍ # ²éÕÒ
+"å¯è§†æ¨¡å¼ä¸­ï¼Œä½¿ç”¨ * å’Œ # æŸ¥æ‰¾
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 function! s:VSetSearch()
@@ -67,12 +67,14 @@ endfunction
 
 :nnoremap cm :call OpenFileLocation()<CR>
 
-"Õ¹¿ªµ±Ç°Ä¿Â¼
+"å±•å¼€å½“å‰ç›®å½•
 cnoremap <expr> %% getcmdtype( )==':'? expand('%:h').'/':'%%'
 
-"ÉèÖÃÎÄ¼ş±àÂë¸ñÊ½
+"è®¾ç½®æ–‡ä»¶ç¼–ç æ ¼å¼
 set encoding=utf-8
-"set fileencodings=utf-8,chinese,latin-1
+set fileencodings=utf-8,chinese,latin-1
+set fileencoding=utf-8
+set termencoding=utf-8
 
 "if has("win32")
 "    set fileencoding=chinese
@@ -80,67 +82,69 @@ set encoding=utf-8
 "    set fileencoding=utf-8
 "endif
 
-"½â¾öconsleÊä³öÂÒÂë
+"è§£å†³consleè¾“å‡ºä¹±ç 
 language messages zh_CN.utf-8
 
 set nocompatible
-"ÉèÖÃÎÄ¼şÀàĞÍ¼ì²â
+"è®¾ç½®æ–‡ä»¶ç±»å‹æ£€æµ‹
 filetype plugin on
 filetype on
-filetype indent on 	"ÎªÌØ¶¨ÎÄ¼şÔØÈëÏà¹ØËõ½øÎÄ¼ş
+filetype indent on 	"ä¸ºç‰¹å®šæ–‡ä»¶è½½å…¥ç›¸å…³ç¼©è¿›æ–‡ä»¶
 syntax enable
 syntax on
 
 set fileformat=unix
 
-"ÉèÖÃÖ÷ÌâÑÕÉ«
+"è®¾ç½®ä¸»é¢˜é¢œè‰²
 "colorscheme solarized
 "colorscheme Zenburn
 "colorscheme candy
 "colorscheme Jellybeans
 colorscheme desert
-"ÉèÖÃÍË¸ñ¼ü
+"è®¾ç½®é€€æ ¼é”®
 set backspace=indent,eol,start
 
 
-set incsearch   "ËÑË÷
-set nu          "ÏÔÊ¾ĞĞºÅ
-set ignorecase  "ºöÂÔ´óĞ¡Ğ´
-set guifont=Consolas:h10   "ĞŞ¸Ä×ÖÌå 
+set incsearch   "æœç´¢
+set nu          "æ˜¾ç¤ºè¡Œå·
+set ignorecase  "å¿½ç•¥å¤§å°å†™
+set guifont=Consolas:h10   "ä¿®æ”¹å­—ä½“ 
 
-set autoread "ÎÄ¼şĞŞ¸Äºó×Ô¶¯ÔØÈë
-set nobackup "¸²¸ÇÎÄ¼şÊ±²»±¸·İ
-set noswapfile "¹Ø±Õ½»»¥ÎÄ¼ş
-set noundofile "¹Ø±Õ.un~ÎÄ¼ş
+set autoread "æ–‡ä»¶ä¿®æ”¹åè‡ªåŠ¨è½½å…¥
+set nobackup "è¦†ç›–æ–‡ä»¶æ—¶ä¸å¤‡ä»½
+set noswapfile "å…³é—­äº¤äº’æ–‡ä»¶
+set noundofile "å…³é—­.un~æ–‡ä»¶
 
-set ai "×Ô¶¯Ëõ½ø
-set sw=4 "×Ô¶¯Ëõ½ø¿í¶È
-set ts=4 " tabstop ÖÆ±í·û¿í¶È
-set sta  "¿ªÆôsmarttab ÔÚ²åÈëÄ£Ê½
+set ai "è‡ªåŠ¨ç¼©è¿›
+set sw=4 "è‡ªåŠ¨ç¼©è¿›å®½åº¦
+set ts=4 " tabstop åˆ¶è¡¨ç¬¦å®½åº¦
+set sta  "å¼€å¯smarttab åœ¨æ’å…¥æ¨¡å¼
 set expandtab
 
+set clipboard=unnamed
+if has("win32")
+    "è®¾ç½®ç³»ç»Ÿå‰ªè´´æ¿
+    :nnoremap y "+y
+    :vnoremap y "+y
+    :nnoremap p "+p
+    :vnoremap p "+p
+    :nnoremap x "+x
+    :vnoremap x "+x
+    :nnoremap d "+d
+    :vnoremap d "+d
+endif
 
-"ÉèÖÃÏµÍ³¼ôÌù°å
-:nnoremap y "+y
-:vnoremap y "+y
-:nnoremap p "+p
-:vnoremap p "+p
-:nnoremap x "+x
-:vnoremap x "+x
-:nnoremap d "+d
-:vnoremap d "+d
-
-"ÉèÖÃ(),[],{},""³É¶Ô³öÏÖ
+"è®¾ç½®(),[],{},""æˆå¯¹å‡ºç°
 ":inoremap ( ()<left>
 ":inoremap [ []<left>
 ":inoremap { {}<left>
 ":inoremap " ""<left>
 ":nnoremap <f5> :!ctags _R<CR>
 "
-"ÉèÖÃfold
+"è®¾ç½®fold
 :nnoremap <space> za
 
-"ÉèÖÃtags
+"è®¾ç½®tags
 set tags=tags
 set autochdir
 
@@ -175,41 +179,41 @@ let g:ycm_semantic_triggers={
 
 
 "taglist setting
-"²»Í¬Ê±ÏÔÊ¾¶à¸öÎÄ¼şµÄtag,Ö»ÏÔÊ¾µ±Ç°ÎÄ¼şµÄ
+"ä¸åŒæ—¶æ˜¾ç¤ºå¤šä¸ªæ–‡ä»¶çš„tag,åªæ˜¾ç¤ºå½“å‰æ–‡ä»¶çš„
 let Tlist_Show_One_File=1
-"Èç¹ûtaglist´°¿ÚÊÇ×îºóÒ»¸ö´°¿Ú£¬ÔòÍË³övim
+"å¦‚æœtaglistçª—å£æ˜¯æœ€åä¸€ä¸ªçª—å£ï¼Œåˆ™é€€å‡ºvim
 let Tlist_Exit_Only_Window=1
-"½«taglistºÍctags¹ØÁª
+"å°†taglistå’Œctagså…³è”
 let Tlist_Ctags_Cmd="ctags.exe"
 "let Tlist_Auto_Open=1
 
 aug configPc
-"ÏÈÇå³ıÒ»ÏÂËùÓĞÃüÁî
+"å…ˆæ¸…é™¤ä¸€ä¸‹æ‰€æœ‰å‘½ä»¤
 :autocmd!
 "
-""±£´æÎÄ¼şÊ±£¬×Ô¶¯¸üĞÂctags
+""ä¿å­˜æ–‡ä»¶æ—¶ï¼Œè‡ªåŠ¨æ›´æ–°ctags
 ":autocmd BufWritePost * call system("ctags -R")
 "
-""ÎÄ¼ş´ò¿ªÊ±£¬¹â±ê»Ö¸´µ½ÉÏ´ÎµÄÎ»ÖÃ
+""æ–‡ä»¶æ‰“å¼€æ—¶ï¼Œå…‰æ ‡æ¢å¤åˆ°ä¸Šæ¬¡çš„ä½ç½®
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 "
-""Èç¹ûÎÄ¼şÊÇpython£¬Ê¹ÓÃpythonµÄÉèÖÃ
+""å¦‚æœæ–‡ä»¶æ˜¯pythonï¼Œä½¿ç”¨pythonçš„è®¾ç½®
 "au FileType python so ~/vimfiles/py.vim
 au FileType python execute 'so '.g:vimconf_path.'/py.vim' 
 "
-""Èç¹ûÎÄ¼şÊÇnote,Ê¹ÓÃnoteµÄÉèÖÃ£¨×Ô¶¨ÒåµÄnoteÀàĞÍ£©
+""å¦‚æœæ–‡ä»¶æ˜¯note,ä½¿ç”¨noteçš„è®¾ç½®ï¼ˆè‡ªå®šä¹‰çš„noteç±»å‹ï¼‰
 "au BufNewFile,BufRead *.note so ~/vimfiles/note.vim
 au BufNewFile,BufRead *.note  execute 'so '.g:vimconf_path.'/note.vim'
 "
-""Èç¹ûÎÄ¼şÊÇcs£¬Ê¹ÓÃcsµÄÉèÖÃ
+""å¦‚æœæ–‡ä»¶æ˜¯csï¼Œä½¿ç”¨csçš„è®¾ç½®
 "au FileType cs so ~/vimfiles/cs.vim
 au FileType cs execute 'so '.g:vimconf_path.'/cs.vim'
 
 "au FileType cs so ~/vimfiles/csharp.vim
 "
-"Èç¹ûÎÄ¼şÊÇ.vim£¬Ê¹ÓÃvimµÄÉèÖÃ
+"å¦‚æœæ–‡ä»¶æ˜¯.vimï¼Œä½¿ç”¨vimçš„è®¾ç½®
 au FileType vim execute 'so '.g:vimconf_path.'/vim.vim'
-"Èç¹ûÊÇerlang
+"å¦‚æœæ˜¯erlang
 "au FileType erlang so ~/vimfiles/erlang.vim
 au FileType erlang execute 'so '.g:vimconf_path.'/erlang.vim'
 
