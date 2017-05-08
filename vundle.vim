@@ -11,20 +11,20 @@ endif
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'gmarik/vundle'
-"python ²å¼ş£º
-"ÕÛµş²å¼ş
+"python æ’ä»¶ï¼š
+"æŠ˜å æ’ä»¶
 Plugin 'tmhedberg/SimpylFold'    
-"c-p ËÑË÷ÎÄ¼ş²å¼ş
+"c-p æœç´¢æ–‡ä»¶æ’ä»¶
 Plugin 'kien/ctrlp.vim'         
-"ÎÄ¼şä¯ÀÀ²å¼ş
+"æ–‡ä»¶æµè§ˆæ’ä»¶
 Plugin 'scrooloose/nerdtree'    
-"ÎÄ¼şä¯ÀÀ²å¼ş Ê¹ÓÃtab¼ü
+"æ–‡ä»¶æµè§ˆæ’ä»¶ ä½¿ç”¨tabé”®
 Plugin 'jistr/vim-nerdtree-tabs'    
-"¼ì²âÓï·¨¸ßÁÁ²å¼ş
+"æ£€æµ‹è¯­æ³•é«˜äº®æ’ä»¶
 "Plugin 'scrooloose/syntastic' 
-"python ×Ô¶¯Ëõ½ø²å¼ş
+"python è‡ªåŠ¨ç¼©è¿›æ’ä»¶
 Plugin 'vim-scripts/indentpython.vim'   
-"PEP8 ´úÂë·ç¸ñ¼ì²é
+"PEP8 ä»£ç é£æ ¼æ£€æŸ¥
 Plugin 'nvie/vim-flake8'        
 Plugin 'rkulla/pydiction'
 Plugin 'majutsushi/tagbar'
@@ -33,30 +33,30 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'heavenshell/vim-pydocstring'
 "Plugin 'ybian/smartim'
 
-"ÅäÉ«·½°¸
-"ÅäÉ«·½°¸ ÖÕ¶ËÄ£Ê½
+"é…è‰²æ–¹æ¡ˆ
+"é…è‰²æ–¹æ¡ˆ ç»ˆç«¯æ¨¡å¼
 Plugin 'jnurmine/Zenburn'       
-"ÅäÉ«·½°¸ GUIÄ£Ê½
+"é…è‰²æ–¹æ¡ˆ GUIæ¨¡å¼
 Plugin 'altercation/vim-colors-solarized' 
-"distinguished ÅäÉ«·½°¸
+"distinguished é…è‰²æ–¹æ¡ˆ
 Plugin 'Lokaltog/vim-distinguished' 
-"jellybeans ÅäÉ«·½°¸
+"jellybeans é…è‰²æ–¹æ¡ˆ
 Plugin 'nanotech/jellybeans.vim' 
-"dotfiles ÅäÉ«·½°¸
+"dotfiles é…è‰²æ–¹æ¡ˆ
 Plugin 'ryanb/dotfiles' 
 
 
-"vimÖĞÖ´ĞĞGitÃüÁî 
+"vimä¸­æ‰§è¡ŒGitå‘½ä»¤ 
 "Plugin 'tpope/vim-fugitive' 
-""vimÖĞÖ´ĞĞGitÃüÁî 
+""vimä¸­æ‰§è¡ŒGitå‘½ä»¤ 
 Plugin 'Amazer/vim-fugitive' 
-"git ÃüÁî¸ßÁÁ
+"git å‘½ä»¤é«˜äº®
 Plugin 'tpope/vim-git' 
 
-"cs²å¼ş
+"csæ’ä»¶
 ""Ominisharp-vim
 "Plugin 'OmniSharp/omnisharp-vim' 
-""Òì²½Ö´ĞĞ c#
+""å¼‚æ­¥æ‰§è¡Œ c#
 Plugin 'tpope/vim-dispatch' 
 Plugin 'vim-syntastic/syntastic' 
 "ultisnips 
@@ -89,7 +89,7 @@ Plugin 'vim-erlang/vim-erlang-runtime'
 "Plugin 'jimenezrick/vimerl'
 
 
-"ack.vim ¿ìËÙËÑË÷ÎÄ¼ş
+"ack.vim å¿«é€Ÿæœç´¢æ–‡ä»¶
 "Plugin 'mileszs/ack.vim'
 "let g:ackprg='ag --nogroup --nocolor --column'
 
