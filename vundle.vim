@@ -27,10 +27,10 @@ Plugin 'vim-scripts/indentpython.vim'
 "PEP8 代码风格检查
 Plugin 'nvie/vim-flake8'        
 Plugin 'rkulla/pydiction'
-Plugin 'majutsushi/tagbar'
-Plugin 'gregsexton/MatchTag'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'heavenshell/vim-pydocstring'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'gregsexton/MatchTag'
+" Plugin 'Lokaltog/vim-powerline'
+" Plugin 'heavenshell/vim-pydocstring'
 "Plugin 'ybian/smartim'
 
 "配色方案
@@ -43,7 +43,7 @@ Plugin 'Lokaltog/vim-distinguished'
 "jellybeans 配色方案
 Plugin 'nanotech/jellybeans.vim' 
 "dotfiles 配色方案
-Plugin 'ryanb/dotfiles' 
+" Plugin 'ryanb/dotfiles' 
 
 
 "vim中执行Git命令 
@@ -71,7 +71,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'
  
 "auto complete
-Plugin 'shougo/neocomplete.vim'
+" Plugin 'shougo/neocomplete.vim'
 "Plugin 'shougo/neocomplcache.vim'
 "Plugin 'Shougo/neocomplcache'
 "Plugin 'Shougo/neocomplete'
@@ -102,5 +102,11 @@ Plugin 'thinca/vim-ref'
 
 "extension for fugitive.vim Gbrower
 Plugin 'tpope/vim-rhubarb'
+Plugin 'Amazer/vim-shaderlab'
+
+Plugin 'vim-scripts/android.vim'
+" Plugin 'VictorDenisov/javacomplete'
+Plugin 'artur-shaik/vim-javacomplete2'
+" Plugin 'Amazer/minibufexplorerpp'
 call vundle#end()
 "set vundle end
