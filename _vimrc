@@ -37,8 +37,8 @@ let mapleader=","
 "<S-Tab> 循环向后切换
 "<Enter> 打开光标所在的buffer
 " d 删除光标所在的buffer
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
+" let g:miniBufExplMapWindowNavVim = 1 
+" let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
 let g:miniBufExplModSelTarget = 1 
 
@@ -200,6 +200,12 @@ let Tlist_Ctags_Cmd="ctags.exe"
 aug configPc
 "先清除一下所有命令
 :autocmd!
+
+"split navigations
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
 "
 ""保存文件时，自动更新ctags
 ":autocmd BufWritePost * call system("ctags -R")
@@ -226,5 +232,7 @@ au FileType vim execute 'so '.g:vimconf_path.'/vim.vim'
 "如果是erlang
 "au FileType erlang so ~/vimfiles/erlang.vim
 au FileType erlang execute 'so '.g:vimconf_path.'/erlang.vim'
+
+au FileType java execute 'so '.g:vimconf_path.'/java.vim'
 
 aug End
