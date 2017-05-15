@@ -34,8 +34,8 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 :inoremap <F5> <esc>:!python %<CR>
 
 "设置vim的注释	
-:inoremap <leader>i <esc>:s/^/\# /<CR>i
-:inoremap <leader>u <esc>:s/\# /<CR>i
+" :inoremap <leader>, <esc>:s/^/\# /<CR>i
+" :inoremap <leader>. <esc>:s/\# /<CR>i
 :vnoremap <leader>i :s/^/\# /<CR>
 :vnoremap <leader>u :s/\# /<CR>
 :nnoremap <leader>i :s/^/\# /<CR>
@@ -81,6 +81,7 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 "vim-flake8 PEP8风格检查插件 配置
 let python_highlight_all=1
 syntax on
+
 
 "python 配色方案设置 需要Zenburn 和 vim-colors-solarized插件
 "if has('gui_running')
