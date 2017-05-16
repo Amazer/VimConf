@@ -102,5 +102,8 @@ Plugin 'thinca/vim-ref'
 
 "extension for fugitive.vim Gbrower
 Plugin 'tpope/vim-rhubarb'
+
+Plugin 'Amazer/vim-shaderlab'
+
 call vundle#end()
 "set vundle end
