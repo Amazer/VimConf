@@ -1,111 +1,141 @@
-set ai "è‡ªåŠ¨ç¼©è¿›
-set sw=4 "è‡ªåŠ¨ç¼©è¿›å®½åº¦
-set ci
+"×Ô¶¯Ëõ½ø
+set ai 
+"×Ô¶¯Ëõ½ø¿í¶È
+set sw=4 
 set ts=4 
-set hlsearch!
+"¹Ø±Õ¸ßÁÁÏÔÊ¾
+set nohlsearch   
 set is
-set nu
+set ignorecase
 
-:nmap ;rs :vsc Build.RebuildSelection<CR>
-:nmap ;ra :vsc Build.RebuildSolution<CR>
+set backspace=indent,eol,start
 
-:nmap <tab> V>
-:nmap <s-tab> V<
-:vmap <tab> >gv
-:vmap <s-tab> <gv
-:imap jj <esc>
+"Ìø×ªÍê³É,µ½ÆÁÄ»ÖĞÑë
+":nnoremap <c-i> <c-i>zz
+":nnoremap <c-o> <c-o>zz
 
-":nmap <c-o> :vsc View.NavigateBackward<CR>
-:nmap <c-p> :vsc View.NavigateBackward<CR>
-:nmap <c-n> :vsc View.NavigateForward<CR>
+":nmap ;rs :vsc Build.RebuildSelection<CR>
+":nmap ;ra :vsc Build.RebuildSolution<CR>
 
-:nmap ,t :vsc Window.NextTab<CR>
-:nmap ,r :vsc Window.PreviousTab<CR>
-:nmap ,nv :vsc Window.NewVerticalTabGroup<CR>
-:nmap ,nh :vsc Window.NewHorizontalTabGroup<CR>
-:nmap ,mn :vsc Window.MovetoNextTabGroup<CR>
-:nmap ,mp :vsc Window.MovetoPreviousTabGroup<CR>
-:nmap ,wn :vsc Window.NextDocumentWindow<CR>
-:nmap ,wp :vsc Window.PreviousDocumentWindow<CR>
+":nnoremap <tab> V>
+":nnoremap <s-tab> V<
+":vnoremap <tab> >gv
+":vnoremap <s-tab> <gv
+:inoremap jj <esc>
+
+:nnoremap <c-o> :vsc View.NavigateBackward<CR>
+:nnoremap <c-i> :vsc View.NavigateForward<CR>
+
+:nnoremap ,t :vsc Window.NextTab<CR>
+:nnoremap ,r :vsc Window.PreviousTab<CR>
+":nnoremap ,nv :vsc Window.NewVerticalTabGroup<CR>
+":nnoremap ,nh :vsc Window.NewHorizontalTabGroup<CR>
+":nnoremap ,mn :vsc Window.MovetoNextTabGroup<CR>
+":nnoremap ,mp :vsc Window.MovetoPreviousTabGroup<CR>
+:nnoremap ,n :vsc Window.NextDocumentWindow<CR>
+:nnoremap ,p :vsc Window.PreviousDocumentWindow<CR>
 
 "20161014 added
 "map pd to peekDefinition
-:nmap :pd :vsc Edit.PeekDefinition<CR>
-:nmap :tl :vsc View.TaskList<CR>
-:nmap :tn :vsc View.NextTask<CR>
-:nmap :tp :vsc View.PreviousTask<CR>
+":nmap gpd :vsc Edit.PeekDefinition<CR>
+":nmap gtl :vsc View.TaskList<CR>
+:nmap gt :vsc View.TaskList<CR>
+":nmap gtn :vsc View.NextTask<CR>
+":nmap gtp :vsc View.PreviousTask<CR>
 
-:nmap cl :vsc View.ErrorList<CR>
-:nmap cn :vsc View.NextError<CR>
-:nmap cp :vsc View.PreviousError<CR>
+:nnoremap cl :vsc View.ErrorList<CR>
+:nnoremap cn :vsc View.NextError<CR>
+:nnoremap cp :vsc View.PreviousError<CR>
 
-:nmap :vf :vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>
+":nmap gvf :vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>
 
-:nmap :ic :vsc EditorContextMenus.CodeWindow.InsertComment<CR>
-:nmap :ac :vsc EditorContextMenus.CodeWindow.AddComment<CR>
+":nmap gic :vsc EditorContextMenus.CodeWindow.InsertComment<CR>
+":nmap gac :vsc EditorContextMenus.CodeWindow.AddComment<CR>
 
 
-"æ·»åŠ æ³¨é‡Š
-:vnoremap ci :s/^/\\/\\//<CR>
-:vnoremap cu :s/\\/\\///<CR>
-:nnoremap ci :s/^/\\/\\//<CR>
-:nnoremap cu :s/\\/\\///<CR>
+"Ìí¼Ó×¢ÊÍ
+" :vnoremap ci :vsc Edit.CommentSelection<cr>
+" :vnoremap cu :vsc Edit.UncommentSelection<cr>
+" :nnoremap ci :vsc Edit.CommentSelection<cr>
+" :nnoremap cu :vsc Edit.UncommentSelection<cr>
 ":inoremap ci <esc>:s/^/\\/\\//<CR>i
 ":inoremap cu <esc>:s/\\/\\///<CR>i
+:vnoremap ci :s/^/\/\/<cr>
+:vnoremap cu :s/\/\//<cr>
+:nnoremap ci :s/^/\/\/<cr>
+:nnoremap cu :s/\/\//<cr>
 
-"å»å®šä¹‰
-:nmap gd <C-]>
+"È¥¶¨Òå
+:nnoremap gd <C-]>zz
 
-"é‡å‘½å
+"gq->==
+:nnoremap gq ==
+:vnoremap gq ==
+
+"ÖØÃüÃû
 :nnoremap gr :vsc VAssistX.RefactorRename<CR>
 
-"æŸ¥çœ‹å‡½æ•°åˆ—è¡¨ list methods
-:nnoremap lm :vsc VAssistX.ListMethodsInCurrentFile<CR>
+"²é¿´º¯ÊıÁĞ±í list methods
+:nnoremap zm :vsc VAssistX.ListMethodsInCurrentFile<CR>
 
-"æŸ¥æ‰¾æ‰€æœ‰å¼•ç”¨--
-:nnoremap ca :vsc Edit.FindAllReferences<CR>
+"²éÕÒËùÓĞÒıÓÃ--
+":nnoremap ca :vsc Edit.FindAllReferences<CR>
+:nnoremap ca :vsc VAssistX.FindReferences<CR>
 
-"æŸ¥æ‰¾æ‰€æœ‰å¼•ç”¨
-:nnoremap cr :vsc VAssistX.FindReferences<CR>
+"²éÕÒËùÓĞÒıÓÃ
+":nnoremap cr :vsc VAssistX.FindReferences<CR>
 
-"æ‰“å¼€æŸ¥çœ‹ç±»çš„å¯¹è¯æ¡†
+"´ò¿ª²é¿´ÀàµÄ¶Ô»°¿ò
 :nnoremap cs :vsc VAssistX.FindSymbolDialog<CR>
 
-"æ‰“å¼€æŸ¥çœ‹æ–‡ä»¶çš„å¯¹è¯æ¡†
+"´ò¿ª²é¿´ÎÄ¼şµÄ¶Ô»°¿ò
 :nnoremap cf :vsc VAssistX.OpenFileInSolutionDialog<CR>
 
 "open VAOutline
 :nnoremap co :vsc VAssistX.VAOutline<CR>
 
-"æ‰“å¼€è§£å†³æ–¹æ¡ˆèµ„æºç®¡ç†å™¨
+"´ò¿ª½â¾ö·½°¸×ÊÔ´¹ÜÀíÆ÷
 :nnoremap cv :vsc View.SolutionExplorer<CR>
 
-"æŸ¥æ‰¾åœ¨å½“å‰æ–‡ä»¶ä¸­çš„å¼•ç”¨
+"²éÕÒÔÚµ±Ç°ÎÄ¼şÖĞµÄÒıÓÃ
 :nnoremap cj :vsc VAssistX.FindReferencesinFile<CR>
 
-"åœ¨æ–‡ä»¶ä¸­æŸ¥æ‰¾
+"ÔÚÎÄ¼şÖĞ²éÕÒ
 :nnoremap ck :vsc Edit.FindinFiles<CR>
 
-"æ‰“å¼€æ–‡ä»¶æ‰€åœ¨æ–‡ä»¶å¤¹
+"´ò¿ªÎÄ¼şËùÔÚÎÄ¼ş¼Ğ
 :nnoremap cm :vsc File.OpenContainingFolder<CR>
 
-"å¿«é€ŸæŸ¥çœ‹æ–¹æ³•å®šä¹‰ 
+"¿ìËÙ²é¿´·½·¨¶¨Òå 
 :nnoremap zj :vsc Edit.QuickInfo<CR>
 
-"å¿«é€ŸæŸ¥çœ‹æ–¹æ³•çš„æ‰€æœ‰å®šä¹‰,é¼ æ ‡åœ¨æ–¹æ³•parameterä¸Šçš„æ—¶å€™æ˜¾ç¤ºçš„ä¸œè¥¿
+"¿ìËÙ²é¿´·½·¨µÄËùÓĞ¶¨Òå,Êó±êÔÚ·½·¨parameterÉÏµÄÊ±ºòÏÔÊ¾µÄ¶«Î÷
 :nnoremap zk :vsc Edit.ParameterInfo<CR>
 
-"æ‰“å¼€æŸ¥æ‰¾ç¬¦å·ç»“æœ
+"´ò¿ª²éÕÒ·ûºÅ½á¹û
 :nnoremap zs :vsc View.FindSymbolResults<CR>
 
-"æ‰“å¼€æŸ¥æ‰¾ç»“æœ1
+"´ò¿ª²éÕÒ½á¹û1
 :nnoremap zi :vsc View.FindResults1<CR>
 
-"æ‰“å¼€æŸ¥æ‰¾ç»“æœ2
+"´ò¿ª²éÕÒ½á¹û2
 :nnoremap zu :vsc View.FindResults2<CR>
 
-"å®ç°interfaceæ¥å£
+"´ò¿ªvaµÄÔÚ±¾ÎÄ¼şÖĞ²éÕÒ½á¹û
+:nnoremap zu :vsc VAssistX.FindReferencesResults<CR>
+
+"ÊµÏÖinterface½Ó¿Ú
 :nnoremap zp :vsc VAssistX.RefactorImplementInterface<CR>
 
+"¿ÉÊÓÄ£Ê½ÖĞ£¬Ê¹ÓÃ * ºÍ # ²éÕÒ
+":vnoremap * y/<C-r>+<CR>
+":vnoremap # y?<C-r>+<CR>
+:vnoremap * "/y/<C-r>/<CR>
+:vnoremap # "/y?<C-r>/<CR>
 
+"Tsvn ÃüÁî
+":nnoremap ,lg :vsc TSVN.ShowLogforfile<cr>
+":nnoremap ,dif :vsc TSVN.ShowDifferences<cr>
+":nnoremap ,cm :vsc TSVN.Commit<cr>
 
+:nnoremap <space> za
