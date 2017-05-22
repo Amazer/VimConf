@@ -24,13 +24,13 @@ else
     let g:vimconf_path='~/.vim/bundle/VimConf'
 endif
 
-let mapleader=","
-"设置普通模式快捷键为jj
+let mapleader="," "设置普通模式快捷键为jj
 :inoremap jj <esc>
 
 :nnoremap <leader>ev :execute 'e '.g:vimconf_path.'/_vimrc'<cr> 
 :nnoremap <leader>sv :execute 'so '.g:vimconf_path.'/_vimrc'<cr> 
 :nnoremap <leader>, :execute 'so %'<cr> 
+
 
 command! CloseBuffer call s:CloseOtherBuffer()
 " add open file shortcut
@@ -38,6 +38,8 @@ command! CYC call s:OpenFile('~/CYC/syntaxAnalysis/syntaxTest.py')
 command! ShaderlabCompleter call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/ycmd/completers/shaderlab/shaderlab_completer.py')
 command! Shaderlab call s:OpenFile('~/vimfiles/bundle/vim-shaderlab/autoload/shaderlabcomplete.vim')
 command! JediHttp call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/third_party/JediHTTP/jedihttp.py')
+command! PythonTest call s:OpenFile('~/pythonWP/__init__.py')
+command! GitPush execute 'Gpush origin master'
 
 function! s:OpenFile(fileFullStr)
     execute 'e '.a:fileFullStr
