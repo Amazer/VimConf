@@ -9,6 +9,7 @@ set is
 set ignorecase
 
 set backspace=indent,eol,start
+set clipboard=unnamed
 
 "跳转完成,到屏幕中央
 ":nnoremap <c-i> <c-i>zz
@@ -122,7 +123,7 @@ set backspace=indent,eol,start
 :nnoremap zu :vsc View.FindResults2<CR>
 
 "打开va的在本文件中查找结果
-:nnoremap zu :vsc VAssistX.FindReferencesResults<CR>
+:nnoremap ,i :vsc VAssistX.FindReferencesResults<CR>
 
 "实现interface接口
 :nnoremap zp :vsc VAssistX.RefactorImplementInterface<CR>
