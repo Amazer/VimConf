@@ -265,7 +265,7 @@ au FileType vim execute 'so '.g:vimconf_path.'/vim.vim'
 au FileType erlang execute 'so '.g:vimconf_path.'/erlang.vim'
 
 au FileType java let g:EclimCompletionMethond='omnifunc'
-=======
+
 au FileType java execute 'so '.g:vimconf_path.'/java.vim'
 
 aug End
