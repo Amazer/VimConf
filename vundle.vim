@@ -102,6 +102,7 @@ Plugin 'thinca/vim-ref'
 
 "extension for fugitive.vim Gbrower
 Plugin 'tpope/vim-rhubarb'
+
 Plugin 'Amazer/vim-shaderlab'
 
 Plugin 'vim-scripts/android.vim'

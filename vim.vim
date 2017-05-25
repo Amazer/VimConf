@@ -1,4 +1,5 @@
 "ÉèÖÃvimµÄ×¢ÊÍ	
+:setlocal fileformat=unix
 :inoremap <leader>i <esc>:s/^/\" /<CR>i
 :inoremap <leader>u <esc>:s/\" /<CR>i
 :vnoremap <leader>i :s/^/\" /<CR>

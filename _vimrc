@@ -12,6 +12,7 @@ if has("win32")
     source $VIMRUNTIME/menu.vim
 endif
 
+
 "关闭提示音
 set vb t_vb=
 "VimConf  global settings
@@ -23,13 +24,42 @@ else
     let g:vimconf_path='~/.vim/bundle/VimConf'
 endif
 
-let mapleader=","
-"设置普通模式快捷键为jj
+let mapleader="," "设置普通模式快捷键为jj
 :inoremap jj <esc>
 
 :nnoremap <leader>ev :execute 'e '.g:vimconf_path.'/_vimrc'<cr> 
 :nnoremap <leader>sv :execute 'so '.g:vimconf_path.'/_vimrc'<cr> 
 :nnoremap <leader>, :execute 'so %'<cr> 
+
+
+command! CloseBuffer call s:CloseOtherBuffer()
+" add open file shortcut
+command! CYC call s:OpenFile('~/CYC/syntaxAnalysis/syntaxTest.py')
+command! ShaderlabCompleter call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/ycmd/completers/shaderlab/shaderlab_completer.py')
+command! Shaderlab call s:OpenFile('~/vimfiles/bundle/vim-shaderlab/autoload/shaderlabcomplete.vim')
+command! JediHttp call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/third_party/JediHTTP/jedihttp.py')
+command! PythonTest call s:OpenFile('~/pythonWP/__init__.py')
+command! GitPush execute 'Gpush origin master'
+
+function! s:OpenFile(fileFullStr)
+    execute 'e '.a:fileFullStr
+endfunction
+
+function! s:CloseOtherBuffer()
+"     let s:curWinNr=winnr()
+"     if winbufnr(s:curWinNr)==1
+"         return
+"     endif
+
+    let s:curBufNr=bufnr('%')
+    execute 'bn'
+    let s:nextBufNr=bufnr('%')
+    while s:nextBufNr != s:curBufNr
+        exe 'bn'
+        exe 'bdel '.s:nextBufNr
+        let s:nextBufNr=bufnr('%')
+    endwhile
+endfunction
 
 "minibufexpl config
 "在minibufexpl中的时候，
@@ -106,9 +136,9 @@ syntax on
 set fileformat=unix
 
 "设置主题颜色
-"colorscheme solarized
+" colorscheme solarized
 "colorscheme Zenburn
-"colorscheme candy
+" colorscheme candy
 "colorscheme Jellybeans
 colorscheme desert
 "设置退格键
@@ -184,7 +214,7 @@ let g:ycm_semantic_triggers={
 			\ 'c' : ['->','.'],
 			\ 'erlang' : [':'],
 			\ 'lua' : ['.',':'],
-			\ 'cs,java,javascript,typescript,d,python,go,vim':['.'],
+			\ 'shaderlab,cs,java,javascript,typescript,d,python,go,vim':['.'],
 			\ }
 
 
@@ -206,7 +236,8 @@ nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
-"
+"fileformat = unix 
+au BufNewFile,BufRead *.* :set fileformat=unix
 ""保存文件时，自动更新ctags
 ":autocmd BufWritePost * call system("ctags -R")
 "
@@ -232,6 +263,8 @@ au FileType vim execute 'so '.g:vimconf_path.'/vim.vim'
 "如果是erlang
 "au FileType erlang so ~/vimfiles/erlang.vim
 au FileType erlang execute 'so '.g:vimconf_path.'/erlang.vim'
+
+au FileType java let g:EclimCompletionMethond='omnifunc'
 
 au FileType java execute 'so '.g:vimconf_path.'/java.vim'
 

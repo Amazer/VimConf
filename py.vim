@@ -82,6 +82,7 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 let python_highlight_all=1
 syntax on
 
+
 "python 配色方案设置 需要Zenburn 和 vim-colors-solarized插件
 "if has('gui_running')
 "	set background=dark
