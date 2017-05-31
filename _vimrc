@@ -34,7 +34,7 @@ let mapleader="," "设置普通模式快捷键为jj
 
 command! CloseBuffer call s:CloseOtherBuffer()
 " add open file shortcut
-command! CYC call s:OpenFile('~/CYC/syntaxAnalysis/syntaxTest.py')
+command! CYC call s:OpenFile('~/CYC/')
 command! ShaderlabCompleter call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/ycmd/completers/shaderlab/shaderlab_completer.py')
 command! Shaderlab call s:OpenFile('~/vimfiles/bundle/vim-shaderlab/autoload/shaderlabcomplete.vim')
 command! JediHttp call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/third_party/JediHTTP/jedihttp.py')

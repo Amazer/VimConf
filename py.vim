@@ -13,7 +13,7 @@ let g:ycm_show_diagnostics_ui = 0
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set textwidth=79	"每行代码长度不超过80
+" set textwidth=79	"每行代码长度不超过80
 set expandtab
 set autoindent
 set fileformat=unix
