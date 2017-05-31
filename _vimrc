@@ -80,6 +80,7 @@ nnoremap <C-h> <C-w><C-h>
 
 "使用vundle的配置 
 "使用 execute 执行命令
+filetype off
 execute 'so '.g:vimconf_vundle_conf
 filetype plugin indent on
 
