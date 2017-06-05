@@ -41,6 +41,7 @@ command! Shaderlab call s:OpenFile('~/vimfiles/bundle/vim-shaderlab/autoload/sha
 command! JediHttp call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/third_party/JediHTTP/jedihttp.py')
 command! PythonTest call s:OpenFile('~/pythonWP/__init__.py')
 command! GitPush execute 'Gpush origin master'
+command! BundlesFolder execute call s:OpenFile('~/vimfiles/bundle/')
 
 function! s:OpenFile(fileFullStr)
     execute 'e '.a:fileFullStr
