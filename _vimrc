@@ -12,7 +12,6 @@ if has("win32")
     source $VIMRUNTIME/menu.vim
 endif
 
-
 "关闭提示音
 set vb t_vb=
 "VimConf  global settings
@@ -40,6 +39,9 @@ command! Shaderlab call s:OpenFile('~/vimfiles/bundle/vim-shaderlab/autoload/sha
 command! JediHttp call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/third_party/JediHTTP/jedihttp.py')
 command! PythonTest call s:OpenFile('~/pythonWP/__init__.py')
 command! GitPush execute 'Gpush origin master'
+
+command! BundleFolder call s:OpenFile('~/vimfiles\bundle\')
+command! NoteVim call s:OpenFile('~/vimfiles\bundle\NoteVim\')
 
 function! s:OpenFile(fileFullStr)
     execute 'e '.a:fileFullStr
