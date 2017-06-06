@@ -12,6 +12,7 @@ if has("win32")
     source $VIMRUNTIME/menu.vim
 endif
 
+set helplang=cn
 "关闭提示音
 set vb t_vb=
 "VimConf  global settings
@@ -38,6 +39,7 @@ command! ShaderlabCompleter call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/thi
 command! Shaderlab call s:OpenFile('~/vimfiles/bundle/vim-shaderlab/autoload/shaderlabcomplete.vim')
 command! JediHttp call s:OpenFile('~/vimfiles/bundle/YouCompleteMe/third_party/ycmd/third_party/JediHTTP/jedihttp.py')
 command! PythonTest call s:OpenFile('~/pythonWP/__init__.py')
+command! BundlesFolder call s:OpenFile('~/vimfiles/bundle/')
 command! GitPush execute 'Gpush origin master'
 
 command! BundleFolder call s:OpenFile('~/vimfiles\bundle\')
@@ -240,7 +242,7 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 "fileformat = unix 
-au BufNewFile,BufRead *.* :set fileformat=unix
+" au BufNewFile,BufRead *.* :set fileformat=unix
 ""保存文件时，自动更新ctags
 ":autocmd BufWritePost * call system("ctags -R")
 "
