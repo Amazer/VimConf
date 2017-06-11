@@ -77,10 +77,10 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
 
 "split navigations
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
 
 "使用vundle的配置 
 "使用 execute 执行命令
