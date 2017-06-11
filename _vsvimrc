@@ -23,6 +23,10 @@ set clipboard=unnamed
 ":vnoremap <tab> >gv
 ":vnoremap <s-tab> <gv
 :inoremap jj <esc>
+:nnoremap <c-j> <c-w>j
+:nnoremap <c-k> <c-w>k
+:nnoremap <c-l> <c-w>l
+:nnoremap <c-h> <c-w>h
 
 :nnoremap <c-o> :vsc View.NavigateBackward<CR>
 :nnoremap <c-i> :vsc View.NavigateForward<CR>
