@@ -15,7 +15,7 @@ set clipboard=unnamed
 ":nnoremap <c-i> <c-i>zz
 ":nnoremap <c-o> <c-o>zz
 
-":nmap ;rs :vsc Build.RebuildSelection<CR>
+:nnoremap ,b :vsc Build.RebuildSelection<CR>
 ":nmap ;ra :vsc Build.RebuildSolution<CR>
 
 ":nnoremap <tab> V>
