@@ -109,5 +109,7 @@ Plugin 'vim-scripts/android.vim'
 " Plugin 'VictorDenisov/javacomplete'
 Plugin 'artur-shaik/vim-javacomplete2'
 " Plugin 'Amazer/minibufexplorerpp'
+"show indent line
+Plugin 'Yggdroot/indentLine'
 call vundle#end()
 "set vundle end
