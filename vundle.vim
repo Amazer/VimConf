@@ -111,5 +111,6 @@ Plugin 'artur-shaik/vim-javacomplete2'
 " Plugin 'Amazer/minibufexplorerpp'
 "show indent line
 Plugin 'Yggdroot/indentLine'
+Plugin 'Amazer/vim-DrawIt'
 call vundle#end()
 "set vundle end
