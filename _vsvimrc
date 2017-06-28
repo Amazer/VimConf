@@ -65,8 +65,9 @@ set clipboard=unnamed
 " :nnoremap cu :vsc Edit.UncommentSelection<cr>
 ":inoremap ci <esc>:s/^/\\/\\//<CR>i
 ":inoremap cu <esc>:s/\\/\\///<CR>i
-:vnoremap ci :s/^/\/\/<cr>
-:vnoremap cu :s/\/\//<cr>
+:vnoremap ci :normal s//<cr>
+"vv是为了退出visual line模式
+:vnoremap cu :s/\/\//<cr>vv
 :nnoremap ci :s/^/\/\/<cr>
 :nnoremap cu :s/\/\//<cr>
 
