@@ -116,5 +116,7 @@ Plugin 'Amazer/vim-DrawIt'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'isnowfy/python-vim-instant-markdown'
+Plugin 'iamcco/mathjax-support-for-mkdp'
+Plugin 'iamcco/markdown-preview.vim'
 call vundle#end()
 "set vundle end

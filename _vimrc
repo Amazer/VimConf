@@ -35,6 +35,15 @@ let mapleader="," "设置普通模式快捷键为jj
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_folding_style_pythonic = 1
 
+"markdown-preview.vim setting
+":MarkdownPreview
+":MarkdownPreviewStop
+"need Markdown Preview Plus, 允许访问文件
+let g:mkdp_path_to_chrome='C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
+let g:mkdp_auto_start=0
+let g:mkdp_auto_open=1
+let g:mkdp_auto_close=1
+let g:mkdp_refresh_slow=0
 
 command! CloseBuffer call s:CloseOtherBuffer()
 " add open file shortcut
