@@ -31,6 +31,10 @@ let mapleader="," "设置普通模式快捷键为jj
 :nnoremap <leader>sv :execute 'so '.g:vimconf_path.'/_vimrc'<cr> 
 :nnoremap <leader>, :execute 'so %'<cr> 
 
+"vim_markdown setting
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_style_pythonic = 1
+
 
 command! CloseBuffer call s:CloseOtherBuffer()
 " add open file shortcut
@@ -179,6 +183,10 @@ if has("win32")
     :vnoremap d "+d
 endif
 
+"indent line setting
+let g:indentLine_setConceal=0
+" let g:indentLine_concealcursor='inc'
+" let g:indentLine_conceallevel=2
 "设置(),[],{},""成对出现
 ":inoremap ( ()<left>
 ":inoremap [ []<left>
