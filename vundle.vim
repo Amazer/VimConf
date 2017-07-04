@@ -112,5 +112,9 @@ Plugin 'artur-shaik/vim-javacomplete2'
 "show indent line
 Plugin 'Yggdroot/indentLine'
 Plugin 'Amazer/vim-DrawIt'
+"vim markdown 
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'isnowfy/python-vim-instant-markdown'
 call vundle#end()
 "set vundle end
