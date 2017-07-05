@@ -117,6 +117,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'isnowfy/python-vim-instant-markdown'
 Plugin 'iamcco/mathjax-support-for-mkdp'
-Plugin 'iamcco/markdown-preview.vim'
+"support flowchart,use flowchart.js
+Plugin 'sat1993/markdown-preview.vim'   
+" Plugin 'iamcco/markdown-preview.vim'
 call vundle#end()
 "set vundle end
