@@ -10,6 +10,7 @@ set ignorecase
 
 set backspace=indent,eol,start
 set clipboard=unnamed
+set number
 
 "跳转完成,到屏幕中央
 ":nnoremap <c-i> <c-i>zz
