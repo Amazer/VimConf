@@ -28,6 +28,18 @@ set is
 :nnoremap y "+y
 :vnoremap y "+y
 :nnoremap p "+p
+
+"选中查找
+:vnoremap * "/y/<C-r>/<CR>
+:vnoremap # "/y?<C-r>/<CR>
+
+:nnoremap <space> za
+
+:nnoremap <c-j> <c-w>j
+:nnoremap <c-k> <c-w>k
+:nnoremap <c-l> <c-w>l
+:nnoremap <c-h> <c-w>h
+
 " 输入命令 :actionlist 显示所有action 
 
 "设置其他
