@@ -12,6 +12,7 @@ set sw=4 "自动缩进宽度
 set ts=4 
 set hlsearch!
 set is
+set clipboard=unnamed
 
 :nmap <tab> V>
 :nmap <s-tab> V<
@@ -25,9 +26,9 @@ set is
 :nnoremap ci :s/^/\/\/<CR>
 :nnoremap cu :s/\/\//<CR>
 
-:nnoremap y "+y
-:vnoremap y "+y
-:nnoremap p "+p
+" :nnoremap y "+y
+" :vnoremap y "+y
+" :nnoremap p "+p
 
 "选中查找
 :vnoremap * "/y/<C-r>/<CR>
