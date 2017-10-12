@@ -12,6 +12,8 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 set number
 
+:nnoremap . .<Esc>
+
 "跳转完成,到屏幕中央
 ":nnoremap <c-i> <c-i>zz
 ":nnoremap <c-o> <c-o>zz
@@ -73,12 +75,19 @@ set number
 :nnoremap ci :s/^/\/\/<cr>
 :nnoremap cu :s/\/\//<cr>
 
+:nnoremap n nzz
+:nnoremap N Nzz
+:nnoremap * *zz
+:nnoremap # #zz
 "去定义
 :nnoremap gd <C-]>zz
 
 "gq->==
 :nnoremap gq ==
 :vnoremap gq ==
+
+"format code
+:nnoremap == :vsc Edit.FormatDocument<CR>
 
 "重命名
 :nnoremap gr :vsc VAssistX.RefactorRename<CR>
