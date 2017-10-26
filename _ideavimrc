@@ -51,11 +51,12 @@ set clipboard=unnamed
 :nmap cf :action SearchEverywhere<CR>
 :nmap ck :action GotoFile<CR>
 ":nmap cs :action FindModal<CR>
-:nmap cs :action GotoSymbol<CR>
+
 :nmap ga :action GotoAction<CR>
 :nmap ca :action FindUsages<CR>
 :nmap co :action ActivateStructureToolWindow<CR>
 :nmap cv :action ActivateProjectToolWindow<CR>
 :nmap st :action SelectIn<CR>
 :nmap cm :action ShowFilePath<CR>
+:nmap zp :action OverrideMethods<CR>
 
