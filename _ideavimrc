@@ -51,7 +51,7 @@ set clipboard=unnamed
 :nmap cf :action SearchEverywhere<CR>
 :nmap ck :action GotoFile<CR>
 ":nmap cs :action FindModal<CR>
-
+:nmap cs :action GotoSymbol<CR>
 :nmap ga :action GotoAction<CR>
 :nmap ca :action FindUsages<CR>
 :nmap co :action ActivateStructureToolWindow<CR>
@@ -59,4 +59,6 @@ set clipboard=unnamed
 :nmap st :action SelectIn<CR>
 :nmap cm :action ShowFilePath<CR>
 :nmap zp :action OverrideMethods<CR>
+"代码提示快捷键
+:nmap zj :action QuickJavaDoc<CR>
 
