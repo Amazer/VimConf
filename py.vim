@@ -33,6 +33,8 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 :noremap <F5> :!python %<CR>
 :inoremap <F5> <esc>:!python %<CR>
 
+:noremap <leader>b :!python %<CR>
+
 "设置vim的注释	
 " :inoremap <leader>i <esc>:s/^/\# /<CR>i
 " :inoremap <leader>u <esc>:s/\# /<CR>i
@@ -123,15 +125,23 @@ function! PyCompileAndRunFile()
 endfunction
 
 nnoremap <buffer> <localleader>r :call PyCompileAndRunFile()<cr>
-nnoremap <buffer> <localleader>b :call PyShowResultInVim()<cr>
+nnoremap <buffer> <localleader>b :call PyShowResultInVimCmdLine()<cr>
+
+function! PyShowResultInVimCmdLine()
+	"get result
+	let result=system(g:py_command ." ". bufname("%"))
+    echo "python exe result:"
+    echo result
+endfunction
 
 function! PyShowResultInVim()
 	"get result
 	let result=system(g:py_command ." ". bufname("%"))
-	echom result
 
+	echom result
 	"open a new split and set it up
     vsplit __Py_Result__
+    split __Py_Result__
     normal! ggdG
     setlocal filetype=pyresult
     setlocal buftype=nofile
