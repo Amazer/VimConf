@@ -6,3 +6,5 @@
 :vnoremap <leader>u :s/\" /<CR>
 :nnoremap <leader>i :s/^/\" /<CR>
 :nnoremap <leader>u :s/\" /<CR>
+
+:nnoremap <leader>b :so %<CR>
