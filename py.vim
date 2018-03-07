@@ -141,7 +141,6 @@ function! PyShowResultInVim()
 	echom result
 	"open a new split and set it up
     vsplit __Py_Result__
-    split __Py_Result__
     normal! ggdG
     setlocal filetype=pyresult
     setlocal buftype=nofile
