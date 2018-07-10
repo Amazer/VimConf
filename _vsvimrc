@@ -31,8 +31,8 @@ set number
 :nnoremap <c-l> <c-w>l
 :nnoremap <c-h> <c-w>h
 
-:nnoremap <c-o> :vsc View.NavigateBackward<CR>
-:nnoremap <c-i> :vsc View.NavigateForward<CR>
+:nnoremap <c-o> :vsc View.NavigateBackward<CR>zz
+:nnoremap <c-i> :vsc View.NavigateForward<CR>zz
 
 :nnoremap ,t :vsc Window.NextTab<CR>
 :nnoremap ,r :vsc Window.PreviousTab<CR>
