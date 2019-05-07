@@ -12,7 +12,24 @@ set sw=4 "自动缩进宽度
 set ts=4 
 set hlsearch!
 set is
-set clipboard=unnamed
+set clipboard+=unnamed
+
+if has("win32")
+    let g:vimconf_vundle_conf='~/vimfiles/bundle/VimConf/vundle.vim'
+    let g:vimconf_path='~/vimfiles/bundle/VimConf'
+    "设置系统剪贴板
+"     :nnoremap y "+y
+"     :vnoremap y "+y
+"     :nnoremap p "+p
+"     :vnoremap p "+p
+"     :nnoremap x "+x
+"     :vnoremap x "+x
+"     :nnoremap d "+d
+"     :vnoremap d "+d
+else
+    let g:vimconf_vundle_conf='~/.vim/bundle/VimConf/vundle.vim'
+    let g:vimconf_path='~/.vim/bundle/VimConf'
+endif
 
 :nmap <tab> V>
 :nmap <s-tab> V<
@@ -21,10 +38,14 @@ set clipboard=unnamed
 :inoremap jj <esc>
 
 "设置注释//
-:vnoremap ci :s/^/\/\/<CR>
-:vnoremap cu :s/\/\//<CR>
-:nnoremap ci :s/^/\/\/<CR>
-:nnoremap cu :s/\/\//<CR>
+" :vnoremap ci :s/^/\/\/<CR>
+" :vnoremap cu :s/\/\//<CR>
+" :nnoremap ci :s/^/\/\/<CR>
+" :nnoremap cu :s/\/\//<CR>
+:vnoremap ci :s/^/--<CR>
+:vnoremap cu :s/-- \{0,1\}//<CR>
+:nnoremap ci :s/^/-- <CR>
+:nnoremap cu :s/-- \{0,1\}//<CR>
 
 " :nnoremap y "+y
 " :vnoremap y "+y
@@ -49,7 +70,9 @@ set clipboard=unnamed
 :nmap ,t :action VimMotionNextTab<CR>
 :nmap ,r :action VimMotionPreviousTab<CR>
 :nmap cf :action SearchEverywhere<CR>
-:nmap ck :action GotoFile<CR>
+" :nmap ck :action GotoFile<CR>
+:nmap ck :action FindInPath<CR>
+:nmap cj :action FindUsages<CR>
 ":nmap cs :action FindModal<CR>
 :nmap cs :action GotoSymbol<CR>
 :nmap ga :action GotoAction<CR>
@@ -61,4 +84,7 @@ set clipboard=unnamed
 :nmap zp :action OverrideMethods<CR>
 "代码提示快捷键
 :nmap zj :action QuickJavaDoc<CR>
+:nmap ,, :action Run<CR> 
+:nmap ,b :action Run<CR> 
 
+au FileType python execute 'so '.g:vimconf_path.'/idea_py.vim'
