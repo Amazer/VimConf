@@ -1,23 +1,26 @@
 set nocompatible
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
+"set timeout timeoutlen=500 ttimeoutlen=100
+set ttimeout ttimeoutlen=100
 
 set nu 
 syntax enable
 syntax on
 set ignorecase
 
-set ai "×Ô¶¯Ëõ½ø
-set sw=4 "×Ô¶¯Ëõ½ø¿í¶È
+set ai "è‡ªåŠ¨ç¼©è¿›
+set sw=4 "è‡ªåŠ¨ç¼©è¿›å®½åº¦
 set ts=4 
 set hlsearch!
 set is
 set clipboard+=unnamed
+set ideajoin
 
-if has("win32")
-    let g:vimconf_vundle_conf='~/vimfiles/bundle/VimConf/vundle.vim'
-    let g:vimconf_path='~/vimfiles/bundle/VimConf'
-    "ÉèÖÃÏµÍ³¼ôÌù°å
+"if has("win32")
+"    let g:vimconf_vundle_conf='~/vimfiles/bundle/VimConf/vundle.vim'
+"    let g:vimconf_path='~/vimfiles/bundle/VimConf'
+    "è®¾ç½®ç³»ç»Ÿå‰ªè´´æ¿
 "     :nnoremap y "+y
 "     :vnoremap y "+y
 "     :nnoremap p "+p
@@ -26,10 +29,10 @@ if has("win32")
 "     :vnoremap x "+x
 "     :nnoremap d "+d
 "     :vnoremap d "+d
-else
-    let g:vimconf_vundle_conf='~/.vim/bundle/VimConf/vundle.vim'
-    let g:vimconf_path='~/.vim/bundle/VimConf'
-endif
+"else
+"    let g:vimconf_vundle_conf='~/.vim/bundle/VimConf/vundle.vim'
+"    let g:vimconf_path='~/.vim/bundle/VimConf'
+"endif
 
 :nmap <tab> V>
 :nmap <s-tab> V<
@@ -37,21 +40,27 @@ endif
 :vmap <s-tab> <gv
 :inoremap jj <esc>
 
-"ÉèÖÃ×¢ÊÍ//
+"è®¾ç½®æ³¨é‡Š//
 " :vnoremap ci :s/^/\/\/<CR>
 " :vnoremap cu :s/\/\//<CR>
 " :nnoremap ci :s/^/\/\/<CR>
 " :nnoremap cu :s/\/\//<CR>
+
 :vnoremap ci :s/^/--<CR>
 :vnoremap cu :s/-- \{0,1\}//<CR>
 :nnoremap ci :s/^/-- <CR>
 :nnoremap cu :s/-- \{0,1\}//<CR>
 
+
+:vmap <c-/> <Action>(CommentByLineComment)
+:nmap <c-/> <Action>(CommentByLineComment)
+
+
 " :nnoremap y "+y
 " :vnoremap y "+y
 " :nnoremap p "+p
 
-"Ñ¡ÖĞ²éÕÒ
+"é€‰ä¸­æŸ¥æ‰¾
 :vnoremap * "/y/<C-r>/<CR>
 :vnoremap # "/y?<C-r>/<CR>
 
@@ -62,29 +71,40 @@ endif
 :nnoremap <c-l> <c-w>l
 :nnoremap <c-h> <c-w>h
 
-" ÊäÈëÃüÁî :actionlist ÏÔÊ¾ËùÓĞaction 
+" è¾“å…¥å‘½ä»¤ :actionlist æ˜¾ç¤ºæ‰€æœ‰action 
 
-"ÉèÖÃÆäËû
-:nmap gq :action ReformatCode<CR>
-:nmap gr :action RenameElement<CR>
-:nmap ,t :action VimMotionNextTab<CR>
-:nmap ,r :action VimMotionPreviousTab<CR>
-:nmap cf :action SearchEverywhere<CR>
+"è®¾ç½®å…¶ä»–
+":nmap == :action ReformatCode<CR>
+":nmap gq :action ReformatCode<CR>
+
+" need Lua-formatter from LiuPeiqi
+:nmap gq <Action>(LuaFormatter.LuaFormatter)
+:nmap == <Action>(ReformatCode)
+
+:nmap gr <Action>(RenameElement)
+":nmap ,t :action VimMotionNextTab<CR>
+":nmap ,r :action VimMotionPreviousTab<CR>
+:nmap ,t <Action>(NextTab)
+:nmap ,r <Action>(PreviousTab)
+
+:nmap cf <Action>(GotoFile)
+":nmap cf <Action>(SearchEverywhere)
 " :nmap ck :action GotoFile<CR>
-:nmap ck :action FindInPath<CR>
-:nmap cj :action FindUsages<CR>
+:nmap ck <Action>(FindInPath)
+:nmap cj <Action>(FindUsages)
 ":nmap cs :action FindModal<CR>
-:nmap cs :action GotoSymbol<CR>
-:nmap ga :action GotoAction<CR>
-:nmap ca :action FindUsages<CR>
-:nmap co :action ActivateStructureToolWindow<CR>
-:nmap cv :action ActivateProjectToolWindow<CR>
-:nmap st :action SelectIn<CR>
-:nmap cm :action ShowFilePath<CR>
-:nmap zp :action OverrideMethods<CR>
-"´úÂëÌáÊ¾¿ì½İ¼ü
-:nmap zj :action QuickJavaDoc<CR>
-:nmap ,, :action Run<CR> 
-:nmap ,b :action Run<CR> 
+:nmap cs <Action>(GotoSymbol)
+:nmap ga <Action>(GotoAction)
+:nmap ca <Action>(FindUsages)
+:nmap co <Action>(ActivateStructureToolWindow)
+:nmap cv <Action>(ActivateProjectToolWindow)
+:nmap st <Action>(SelectIn)
+:nmap cm <Action>(ShowFilePath)
+:nmap zp <Action>(OverrideMethods)
+"ä»£ç æç¤ºå¿«æ·é”®
+:nmap zj <Action>(QuickJavaDoc)
+:nmap ,, <Action>(Run) 
+:nmap ,b <Action>(Run)
+:nmap zm <Action>(FileStructurePopup)
 
 au FileType python execute 'so '.g:vimconf_path.'/idea_py.vim'
