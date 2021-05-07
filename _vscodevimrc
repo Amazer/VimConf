@@ -1,0 +1,88 @@
+set nocompatible
+set encoding=utf-8
+set fileencodings=utf-8,chinese,latin-1
+
+set nu 
+syntax enable
+syntax on
+set ignorecase
+
+set ai "自动缩进
+set sw=4 "自动缩进宽度
+set ts=4 
+set hlsearch!
+set is
+set clipboard+=unnamed
+
+"if has("win32")
+"    let g:vimconf_vundle_conf='~/vimfiles/bundle/VimConf/vundle.vim'
+"    let g:vimconf_path='~/vimfiles/bundle/VimConf'
+    "设置系统剪贴板
+"     :nnoremap y "+y
+"     :vnoremap y "+y
+"     :nnoremap p "+p
+"     :vnoremap p "+p
+"     :nnoremap x "+x
+"     :vnoremap x "+x
+"     :nnoremap d "+d
+"     :vnoremap d "+d
+"else
+"    let g:vimconf_vundle_conf='~/.vim/bundle/VimConf/vundle.vim'
+"    let g:vimconf_path='~/.vim/bundle/VimConf'
+"endif
+
+nmap <tab> V>
+nmap <s-tab> V<
+vmap <tab> >gv
+vmap <s-tab> <gv
+inoremap jj <esc>
+
+
+" :nnoremap y "+y
+" :vnoremap y "+y
+" :nnoremap p "+p
+
+"选中查找
+vnoremap * "/y/<C-r>/<CR>
+vnoremap # "/y?<C-r>/<CR>
+
+nnoremap <space> za
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+
+nmap ,r :tabp<cr>
+nmap ,t :tabn<cr>
+
+" 输入命令 :actionlist 显示所有action 
+
+"设置其他
+":nmap == :action ReformatCode<CR>
+":nmap gq :action ReformatCode<CR>
+":nmap gr :action RenameElement<CR>
+"":nmap ,t :action VimMotionNextTab<CR>
+"":nmap ,r :action VimMotionPreviousTab<CR>
+"":nmap ,t :action NextTab<CR>
+"":nmap ,r :action PreviousTab<CR>
+"
+":nmap cf :action SearchEverywhere<CR>
+"" :nmap ck :action GotoFile<CR>
+":nmap ck :action FindInPath<CR>
+":nmap cj :action FindUsages<CR>
+"":nmap cs :action FindModal<CR>
+":nmap cs :action GotoSymbol<CR>
+":nmap ga :action GotoAction<CR>
+":nmap ca :action FindUsages<CR>
+":nmap co :action ActivateStructureToolWindow<CR>
+":nmap cv :action ActivateProjectToolWindow<CR>
+":nmap st :action SelectIn<CR>
+":nmap cm :action ShowFilePath<CR>
+":nmap zp :action OverrideMethods<CR>
+""代码提示快捷键
+":nmap zj :action QuickJavaDoc<CR>
+":nmap ,, :action Run<CR> 
+":nmap ,b :action Run<CR> 
+
+"au FileType python execute 'so '.g:vimconf_path.'/idea_py.vim'
