@@ -14,6 +14,15 @@ set hlsearch!
 set is
 set clipboard+=unnamed
 
+nnoremap y "+y
+vnoremap y "+y
+nnoremap p "+p
+vnoremap p "+p
+nnoremap x "+x
+vnoremap x "+x
+nnoremap d "+d
+vnoremap d "+d
+
 "if has("win32")
 "    let g:vimconf_vundle_conf='~/vimfiles/bundle/VimConf/vundle.vim'
 "    let g:vimconf_path='~/vimfiles/bundle/VimConf'
